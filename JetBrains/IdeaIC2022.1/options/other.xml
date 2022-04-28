@@ -1,0 +1,74 @@
+<application>
+  <component name="DynamicPluginEnabler">
+    <trackers>
+      <map>
+        <entry key="28EeX2rL2FuRRCNkaK22v85HDxc">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+      </map>
+    </trackers>
+  </component>
+  <component name="JdkInstallerHistory">
+    <option name="installedItems">
+      <installed-jdk>
+        <option name="fullText" value="Eclipse Temurin (AdoptOpenJDK HotSpot) 16.0.2" />
+        <option name="installDir" value="$USER_HOME$/.jdks/temurin-16.0.2" />
+        <option name="javaHomeDir" value="$USER_HOME$/.jdks/temurin-16.0.2" />
+        <option name="sha256" value="323d6d7474a359a28eff7ddd0df8e65bd61554a8ed12ef42fd9365349e573c2c" />
+        <option name="url" value="https://github.com/adoptium/temurin16-binaries/releases/download/jdk-16.0.2%2B7/OpenJDK16U-jdk_x64_linux_hotspot_16.0.2_7.tar.gz" />
+        <option name="versionText" value="16.0.2" />
+      </installed-jdk>
+    </option>
+  </component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontScale" value="1.0" />
+    <option name="fontSize" value="32.0" />
+  </component>
+  <component name="PropertyService"><![CDATA[{
+  "keyToString": {
+    "MarketplacePluginsSearchHistory": "vim",
+    "NonModalCommitCustomization.IsApplied": "true",
+    "RunOnceActivity.se.text.search": "true",
+    "SettingsSearchHistory": "shortcuts\nwindows",
+    "appcds.runOnSecondStart": "IC-221.5080.210-48f30cc223ff8ef13a8aa8528c2b85c9c6f1660258320d9b3b19b9f92fb1077a",
+    "ask.about.ctrl.y.shortcut.v2": "true",
+    "build.toolwindow.Build Output.selection.state": "com.intellij.build.BuildTreeConsoleView",
+    "build.toolwindow.Sync.selection.state": "com.intellij.build.BuildTreeConsoleView",
+    "bundled.plugins.list.saved.version": "IC-221.5080.210",
+    "defaultJdkConfigured": "true",
+    "defaultpackageserviceconfig.fulltext": "https://package-search.services.jetbrains.com/api/search/idea/fulltext",
+    "defaultpackageserviceconfig.suggest": "https://package-search.services.jetbrains.com/api/search/idea/suggest",
+    "defaultpackageserviceconfig.updated.ts": "1650786213634",
+    "eclipse.projects.detected": "",
+    "file.gist.reindex.count": "1",
+    "fileTypeChangedCounter": "1",
+    "gotit.previous.run": "IC-221.5080.210",
+    "ide.memory.adjusted": "true",
+    "ide.updates.whats.new.shown.for": "221",
+    "ideavim.statistics.timestamp": "1650866992133",
+    "installed.kotlin.plugin.version": "221-1.6.20-release-285-IJ5080.210",
+    "last_opened_file_path": "/home/szymon/.config/ConfigFiles/settings.zip",
+    "registry.to.advanced.settings.migration.build": "IC-221.5080.210",
+    "tasks.pass.word.conversion.enforced": "true"
+  },
+  "keyToStringList": {
+    "file.chooser.recent.files": [
+      "/home/szymon/.config/ConfigFiles/settings.zip",
+      "/home/szymon/Projects/Clean2048"
+    ],
+    "fileTypeDetectors": [
+      "com.intellij.ide.scratch.ScratchFileServiceImpl$Detector",
+      "com.android.tools.idea.sqlite.fileType.SqliteFileTypeDetector",
+      "com.android.tools.idea.profilers.capture.MemoryCaptureFileType$Detector",
+      "org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector"
+    ]
+  }
+}]]></component>
+  <component name="TerminalCommandHistoryManager">
+    <command-history-files>
+      <command-history-file filename="Clean2048-history" project-path="$USER_HOME$/Projects/Clean2048" last-access-time="1650825145741" />
+    </command-history-files>
+  </component>
+</application>
