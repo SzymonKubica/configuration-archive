@@ -4,6 +4,7 @@
 
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
+
 local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
@@ -15,6 +16,7 @@ local themeRed = "#af0000"
 local themeDark = "#090909"
 local minimizeDark = "#444444"
 local intermediateDark = "#191919"
+local chargingColor = "#03fcf0"
 
 theme.font          = "sans 8"
 
@@ -46,6 +48,7 @@ theme.tasklist_shape_border_width_focus = 3
 theme.tooltip_border_color = themeRed
 
 theme.hotkeys_modifiers_fg = minimizeDark
+theme.hotkeys_border_color = minimizeDark
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
@@ -60,17 +63,18 @@ theme.hotkeys_modifiers_fg = minimizeDark
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Generate taglist squares:
-local taglist_square_size = dpi(4)
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-    taglist_square_size, theme.fg_normal
-)
-theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-    taglist_square_size, theme.fg_normal
-)
+
+--local taglist_square_size = dpi(4)
+--theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
+  --  taglist_square_size, theme.fg_normal
+--)
+--theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
+  --  taglist_square_size, theme.fg_normal
+--)
 
 -- Make the entries in the tasklist simple
 theme.tasklist_plain_task_name = true
---theme.tasklist_disable_task_name = true
+theme.tasklist_disable_task_name = true
 
 -- Variables set for theming notifications:
 -- notification_font
@@ -144,8 +148,10 @@ theme.awesome_icon = theme_assets.awesome_icon(
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = nil
+theme.icon_theme = nil 
+
 
 return theme
+
 
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

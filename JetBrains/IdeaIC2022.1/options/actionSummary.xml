@@ -51,6 +51,9 @@
     <e n="Switcher">
       <i c="20" l="1650868458705" />
     </e>
+    <e n="ToggleLineBreakpoint">
+      <i c="1" l="1651821858007" />
+    </e>
     <e n="Vcs.Push">
       <i c="1" l="1650868552913" />
     </e>
@@ -70,7 +73,7 @@
       <i c="2" l="1650867486037" />
     </e>
     <e n="com.intellij.openapi.ui.DialogWrapper$4">
-      <i c="2" l="1650868560697" />
+      <i c="4" l="1651821861958" />
     </e>
     <e n="com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$AnCancelAction">
       <i c="1" l="1650867860238" />

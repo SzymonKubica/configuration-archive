@@ -25,6 +25,8 @@ local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
 local menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 local screenshot = require("awesomewm-screenshot.screenshot")
+
+-- Adjusts the dpi automatically
 awful.screen.set_auto_dpi_enabled( true )
 
 -- {{{ Error handling
@@ -56,19 +58,20 @@ end
 --
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/redTheme.lua")
-beautiful.font = "sans 10"
+beautiful.font = "sans 11"
 --beautiful.font = "JetBrains Mono Nerd Font 10"
+
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
--- Swapped the modkey to be the control key. That way there is no clash with -- my wireless keyboard keybindings.
+-- Swapped the modkey to be the control key. That way keybindings on the left can be accessed using the right ctrl 
 modkey = "Control"
 modkey2 = "Mod4"
 
--- Keyboard map indicator and changer
+-- Keyboard map indicator and changer widget
 kbdcfg = {}
 kbdcfg.cmd = "setxkbmap"
 kbdcfg.layout = { { "us", "" }, { "pl", "" } }
@@ -107,7 +110,6 @@ awful.layout.layouts = {
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
 }
--- }}}
 
 -- {{{ Menu
 -- Create a launcher widget and a main menu
@@ -136,7 +138,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock("%d %b %H:%M")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -198,7 +200,8 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ "1", "2", "3", "4", "5"}, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -224,7 +227,7 @@ awful.screen.connect_for_each_screen(function(s)
         filter  = awful.widget.tasklist.filter.currenttags,
         buttons  = tasklist_buttons,
 		    style    = {
-					shape_border_width = 2,
+					shape_border_width = 1,
 					shape  = gears.shape.rounded_bar,
 				},
 				layout   = {
@@ -241,7 +244,8 @@ awful.screen.connect_for_each_screen(function(s)
 									id     = 'icon_role',
 									widget = wibox.widget.imagebox,
 								},
-								margins = 10,
+								top = 6,
+								bottom = 6,
 								widget  = wibox.container.margin,
 							},
 							{
@@ -250,8 +254,8 @@ awful.screen.connect_for_each_screen(function(s)
 							},
 							layout = wibox.layout.fixed.horizontal,
 						},
-						left  = 15,
-						right = 25,
+						left  = 20,
+						right = 20,
 						widget = wibox.container.margin
 					},
 					id     = 'background_role',
@@ -305,11 +309,12 @@ awful.screen.connect_for_each_screen(function(s)
 		local separator = wibox.widget.textbox(" ")
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    s.mywibox = awful.wibar({ position = "bottom", height = 60, screen = s })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
+				expand = "none",
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
@@ -323,6 +328,7 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
 						separator,
 						wibox.widget.systray(),
+						separator,
 						cpu_widget({
 							width = 200,
 							color = "#af0000",
@@ -369,11 +375,13 @@ globalkeys = gears.table.join(
         {description = "Decrease volume", group = "media"}),
 		awful.key({}, "XF86AudioMute", function() volume_widget:toggle() end,
         {description = "Toggle mute", group = "media"}),
+		awful.key({}, "XF86AudioMicMute", function() os.execute("pactl set-source-mute 5 toggle") end,
+        {description = "Toggle mic mute", group = "media"}),
 		awful.key({}, "XF86MonBrightnessUp", function() brightness_widget:inc() end,
         {description = "Increase brightness", group = "media"}),
-		awful.key({ }, "Print", scrot_full,
+		awful.key({ modkey, }, "Print", scrot_full,
 			{description = "Take a screenshot of entire screen", group = "screenshot"}),
-		awful.key({ modkey, }, "Print", scrot_selection_delete,
+		awful.key({ }, "Print", scrot_selection_delete,
 			{description = "Take a screenshot of selection", group = "screenshot"}),
 		awful.key({ modkey, modkey2 }, "Print", scrot_selection,
 			{description = "Take a screenshot of selection", group = "screenshot"}),
@@ -393,6 +401,8 @@ globalkeys = gears.table.join(
               {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
+    awful.key({ modkey2,           }, "Escape", function() awful.spawn.with_shell("bash ~/.local/bin/lock") end,
+              {description = "lock", group = "awesome"}),
 
 -- Default configuration for client focus.
 --     awful.key({ modkey,           }, "j",
@@ -523,7 +533,7 @@ globalkeys = gears.table.join(
     -- Prompt
     awful.key({ modkey },            "space",     function () 
 			-- Run dmenu instead of the default run prompt
-			awful.util.spawn("dmenu_run -q -nb '#181818' -sb '#af0000' -sf '#181818' -fn 'JetBrains Mono Nerd Font-11'") end,
+			awful.util.spawn("dmenu_run -b -q -nb '#181818' -sb '#af0000' -sf '#181818' -h 60 -fn 'JetBrains Mono Nerd Font-12'") end,
 			--awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
@@ -695,6 +705,7 @@ awful.rules.rules = {
         -- and the name shown there might not match defined rules here.
         name = {
           "Event Tester",  -- xev.
+					"Settings",
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
@@ -728,7 +739,6 @@ client.connect_signal("manage", function (c)
         awful.placement.no_offscreen(c)
     end
 end)
-
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 -- client.connect_signal("request::titlebars", function(c)
 --     -- buttons for the titlebar
@@ -779,7 +789,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostart
-awful.spawn.with_shell("picom")
-awful.spawn.with_shell("xbindkeys")
+awful.spawn.with_shell("picom --experimental-backends")
 awful.spawn.with_shell("nitrogen --restore &")
 

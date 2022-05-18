@@ -38,11 +38,15 @@ local popup = awful.popup{
     bg = beautiful.bg_normal,
     ontop = true,
     visible = false,
-    shape = gears.shape.rounded_rect,
+		shape = function(cr, width, height)
+    gears.shape.rounded_rect(cr, width, height, 20)
+	  end,
+		
     border_width = 1,
     border_color = beautiful.bg_focus,
-    maximum_width = 400,
-    offset = { y = 5 },
+    maximum_width = 600,
+		hide_on_right_click = true,
+		placement = awful.placement.bottom_right,
     widget = {}
 }
 
@@ -65,7 +69,8 @@ local function build_rows(devices, on_checkbox_click, device_type)
             shape = gears.shape.circle,
             forced_width = 20,
             forced_height = 20,
-            check_color = beautiful.fg_urgent,
+            --check_color = beautiful.fg_urgent,
+						check_color = "#af0000",
             widget = wibox.widget.checkbox
         }
 
@@ -102,7 +107,7 @@ local function build_rows(devices, on_checkbox_click, device_type)
             widget = wibox.container.background
         }
 
-        row:connect_signal("mouse::enter", function(c) c:set_bg(beautiful.bg_focus) end)
+        row:connect_signal("mouse::enter", function(c) c:set_bg(beautiful.fg_minimize) end)
         row:connect_signal("mouse::leave", function(c) c:set_bg(beautiful.bg_normal) end)
 
         local old_cursor, old_wibox

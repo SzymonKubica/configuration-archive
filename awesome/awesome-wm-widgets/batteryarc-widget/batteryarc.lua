@@ -28,8 +28,8 @@ local function worker(user_args)
     local show_current_level = args.show_current_level or false
     local size = args.size or 18
     local timeout = args.timeout or 10
-    local show_notification_mode = args.show_notification_mode or 'on_hover' -- on_hover / on_click
-    local notification_position = args.notification_position or 'top_right' -- see naughty.notify position argument
+    local show_notification_mode = args.show_notification_mode or 'on_click' -- on_hover / on_click
+    local notification_position = args.notification_position or 'bottom_right' -- see naughty.notify position argument
 
     local main_color = args.main_color or beautiful.fg_color
     local bg_color = args.bg_color or '#ffffff11'
@@ -153,12 +153,23 @@ local function worker(user_args)
                 end)
     end
 
+		local is_notification_visible = false
+		local function toggle_notification() 
+				if (not is_notification_visible) then 
+					show_battery_status()
+					is_notification_visible = true
+				else 
+					naughty.destroy(notification) 
+					is_notification_visible = false
+				end
+			end
+
     if show_notification_mode == 'on_hover' then
         batteryarc_widget:connect_signal("mouse::enter", function() show_battery_status() end)
         batteryarc_widget:connect_signal("mouse::leave", function() naughty.destroy(notification) end)
     elseif show_notification_mode == 'on_click' then
         batteryarc_widget:connect_signal('button::press', function(_, _, _, button)
-            if (button == 1) then show_battery_status() end
+            if (button == 1) then toggle_notification() end
         end)
     end
 

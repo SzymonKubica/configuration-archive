@@ -131,11 +131,14 @@ local function worker(user_args)
     local popup = awful.popup{
         ontop = true,
         visible = false,
-        shape = gears.shape.rounded_rect,
+				shape = function(cr, width, height)
+					gears.shape.rounded_rect(cr, width, height, 20)
+				end,
         border_width = 1,
         border_color = beautiful.bg_normal,
+				hide_on_right_click = true,
         maximum_width = 800,
-        offset = { y = 5 },
+				placement = awful.placement.bottom_right,
         widget = {}
     }
 
@@ -299,12 +302,13 @@ local function worker(user_args)
                         awful.tooltip {
                             objects = { row },
                             mode = 'outside',
-                            preferred_positions = {'bottom'},
+                            preferred_positions = {'left'},
                             timer_function = function()
                                 local text = cmd
                                 if process_info_max_length > 0 and text:len() > process_info_max_length then
                                     text = text:sub(0, process_info_max_length - 3) .. '...'
                                 end
+																text = text:sub(0, string.find(text, ' '))
 
                                 return text
                                         :gsub('%s%-', '\n\t-') -- put arguments on a new line

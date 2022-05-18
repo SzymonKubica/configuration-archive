@@ -23,11 +23,11 @@ local logout_menu_widget = wibox.widget {
             resize = true,
             widget = wibox.widget.imagebox,
         },
-        top = 5,
+        top = 10,
         layout = wibox.container.margin
     },
     shape = function(cr, width, height)
-    gears.shape.rounded_rect(cr, width, height, 4)
+    gears.shape.rounded_rect(cr, width, height, 10)
     end,
     widget = wibox.container.background,
 }
@@ -35,11 +35,14 @@ local logout_menu_widget = wibox.widget {
 local popup = awful.popup {
     ontop = true,
     visible = false,
-		shape = gears.shape.rounded_rect,
+    shape = function(cr, width, height)
+    gears.shape.rounded_rect(cr, width, height, 20)
+    end,
     border_width = 1,
     border_color = beautiful.bg_focus,
+		hide_on_right_click = true,
     maximum_width = 400,
-    offset = { y = 5 },
+    offset = { y = -15, x = -5 },
     widget = {}
 }
 
@@ -51,7 +54,7 @@ local function worker(user_args)
     local font = args.font or beautiful.font
 
     local onlogout = args.onlogout or function () awesome.quit() end
-    local onlock = args.onlock or function() awful.spawn.with_shell("i3lock") end
+    local onlock = args.onlock or function() popup.visible = not popup.visible awful.spawn.with_shell("bash ~/.local/bin/lock") end
     local onreboot = args.onreboot or function() awful.spawn.with_shell("reboot") end
     local onsuspend = args.onsuspend or function() awful.spawn.with_shell("systemctl suspend") end
     local onpoweroff = args.onpoweroff or function() awful.spawn.with_shell("shutdown now") end
@@ -119,10 +122,10 @@ local function worker(user_args)
                     awful.button({}, 1, function()
                         if popup.visible then
                             popup.visible = not popup.visible
-                            logout_menu_widget:set_bg('#00000000')
+                            logout_menu_widget:set_bg(beautiful.bg_normal)
                         else
                             popup:move_next_to(mouse.current_widget_geometry)
-                            logout_menu_widget:set_bg(beautiful.bg_focus)
+                            logout_menu_widget:set_bg(beautiful.bg_normal)
                         end
                     end)
             )

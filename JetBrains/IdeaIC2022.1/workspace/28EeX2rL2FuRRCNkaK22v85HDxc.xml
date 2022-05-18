@@ -29,12 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
+            <state relative-caret-position="276">
               <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
-              <folding>
-                <element signature="e#1010#1011#0" expanded="true" />
-                <element signature="e#1044#1045#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -42,7 +38,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/Clean2048.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
+            <state relative-caret-position="270">
               <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
             </state>
           </provider>
@@ -52,7 +48,7 @@
   </component>
   <component name="FileTypeUsageLocalSummary">
     <fileType name="JAVA">
-      <summary usageCount="5" lastUsed="1650867887175" />
+      <summary usageCount="9" lastUsed="1651821840629" />
     </fileType>
   </component>
   <component name="IdeDocumentHistory">
@@ -140,7 +136,7 @@
   </component>
   <component name="ToolWindowManager">
     <layout>
-      <window_info id="Commit" visible="true" weight="0.32996854" />
+      <window_info id="Commit" visible="true" weight="0.3299105" />
       <window_info id="Bookmarks" order="0" side_tool="true" weight="0.2497378" />
       <window_info content_ui="combo" id="Project" order="1" weight="0.2497378" />
       <window_info id="Learn" order="2" />
@@ -186,21 +182,17 @@
     <state x="820" y="540" width="2206" height="1376" key="Vcs.Push.Dialog.v2/0.0.3840.2400@0.0.3840.2400" timestamp="1650868557455" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/Clean2048.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="276">
+          <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/Grid.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/Clean2048.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
-          <folding>
-            <element signature="e#1010#1011#0" expanded="true" />
-            <element signature="e#1044#1045#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>

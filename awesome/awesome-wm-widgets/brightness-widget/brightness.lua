@@ -41,7 +41,7 @@ local function worker(user_args)
 
     local program = args.program or 'light'
     local step = args.step or 5
-    local base = args.base or 20
+    local base = args.base or 50
     local current_level = 0 -- current brightness value
     local tooltip = args.tooltip or false
     local percentage = args.percentage or false
@@ -169,9 +169,24 @@ local function worker(user_args)
         end)
     end
 
+		local is_on_base = false
+		local stashed_level = nil
+		local function toggle_between_current_base()
+			if (is_on_base) then 
+				brightness_widget:set(stashed_level)
+				is_on_base = false
+			else 
+				stashed_level = current_level
+				brightness_widget:set(base)
+				is_on_base = true
+			end
+		end
+
+				
+
     brightness_widget.widget:buttons(
             awful.util.table.join(
-                    awful.button({}, 1, function() brightness_widget:set(base) end),
+                    awful.button({}, 1, function() toggle_between_current_base() end),
                     awful.button({}, 3, function() brightness_widget:toggle() end),
                     awful.button({}, 4, function() brightness_widget:inc() end),
                     awful.button({}, 5, function() brightness_widget:dec() end)
