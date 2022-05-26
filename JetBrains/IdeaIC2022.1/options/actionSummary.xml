@@ -7,7 +7,7 @@
       <i c="15" l="1650868399857" />
     </e>
     <e n="ActivateProjectToolWindow">
-      <i c="22" l="1650867909616" />
+      <i c="23" l="1653571010454" />
     </e>
     <e n="BuildArtifact">
       <i c="3" l="1650868345215" />
@@ -26,6 +26,9 @@
     </e>
     <e n="Git.Commit.And.Push.Executor">
       <i c="1" l="1650868474264" />
+    </e>
+    <e n="Git.Pull">
+      <i c="1" l="1653571023738" />
     </e>
     <e n="HideActiveWindow">
       <i c="1" l="1650867086317" />
@@ -49,7 +52,7 @@
       <i c="10" l="1650867770565" />
     </e>
     <e n="Switcher">
-      <i c="20" l="1650868458705" />
+      <i c="21" l="1653571065931" />
     </e>
     <e n="ToggleLineBreakpoint">
       <i c="1" l="1651821858007" />
@@ -64,28 +67,31 @@
       <i c="1" l="1650825205055" />
     </e>
     <e n="com.intellij.openapi.actionSystem.EmptyAction$MyDelegatingAction">
-      <i c="29" l="1650868440611" />
+      <i c="159" l="1653572480758" />
+    </e>
+    <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
+      <i c="1" l="1653571007860" />
     </e>
     <e n="com.intellij.openapi.keymap.impl.ui.KeymapPanel$AddKeyboardShortcutAction">
       <i c="1" l="1650867796691" />
     </e>
     <e n="com.intellij.openapi.project.LightEditActionFactory$SimpleLightEditCompatibleAction">
-      <i c="2" l="1650867486037" />
+      <i c="3" l="1653571066539" />
     </e>
     <e n="com.intellij.openapi.ui.DialogWrapper$4">
-      <i c="4" l="1651821861958" />
+      <i c="5" l="1653578965459" />
     </e>
     <e n="com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$AnCancelAction">
       <i c="1" l="1650867860238" />
     </e>
     <e n="com.intellij.toolWindow.ToolWindowHeader$HideAction">
-      <i c="3" l="1650868453977" />
+      <i c="5" l="1653571132821" />
     </e>
     <e n="com.intellij.toolWindow.ToolWindowHeader$ShowOptionsAction">
       <i c="1" l="1650825156252" />
     </e>
     <e n="com.maddyhome.idea.vim.ui.ex.ExShortcutKeyAction">
-      <i c="26" l="1650868340217" />
+      <i c="27" l="1653572436328" />
     </e>
   </component>
 </application>

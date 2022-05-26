@@ -9,16 +9,22 @@
         <entry encoding="base64">bWVyZ2U=</entry>
         <entry encoding="base64">bm8gbW92ZXMgcG9zc2libGU=</entry>
         <entry encoding="base64">bm8=</entry>
+        <entry encoding="base64">Zmx1c2g=</entry>
       </history-search>
       <history-cmd>
         <entry encoding="base64">dw==</entry>
       </history-cmd>
+      <history-expr />
+      <history-input />
     </history>
   </component>
   <component name="VimMarksSettings">
     <globalmarks />
     <filemarks>
-      <file name="/Dummy.txt" timestamp="1651821842839">
+      <file name="$USER_HOME$/Projects/Clean2048/src/main/java/Game2048/GameEngine.java" timestamp="1653572456796">
+        <mark key="'" line="137" column="22" />
+      </file>
+      <file name="/Dummy.txt" timestamp="1653571023825">
         <mark key="[" line="0" column="0" />
         <mark key="]" line="0" column="111" />
         <mark key="^" line="0" column="111" />
@@ -52,6 +58,8 @@
       <jump line="122" column="28" filename="$USER_HOME$/Projects/Clean2048/src/main/java/Game2048/Grid.java" />
       <jump line="177" column="19" filename="$USER_HOME$/Projects/Clean2048/src/main/java/Game2048/Grid.java" />
       <jump line="222" column="15" filename="$USER_HOME$/Projects/Clean2048/src/main/java/Game2048/Grid.java" />
+      <jump line="121" column="0" filename="$USER_HOME$/Projects/Clean2048/src/main/java/Game2048/GameEngine.java" />
+      <jump line="137" column="22" filename="$USER_HOME$/Projects/Clean2048/src/main/java/Game2048/GameEngine.java" />
     </jumps>
   </component>
   <component name="VimRegisterSettings">
@@ -69,14 +77,14 @@
         <text encoding="base64">Rml4IHRoZSBnYnVnIHdpdGggc2NvZXIgcmUgYmVpbmcgaW5jcmVtZW50ZWQgYXMgYSByZXN1bHQgZm9yIGNoZWNraW5nIGlmIGdhbWUgaXMgb3ZlciBieSBzaW11bHNhdGluZyBwb3Npc2libGUgbW92ZXMu</text>
       </register>
       <register name="/" type="4">
-        <text encoding="base64">bm8=</text>
+        <text encoding="base64">Zmx1c2g=</text>
       </register>
     </registers>
   </component>
   <component name="VimSearchSettings">
     <search>
-      <last-search encoding="base64">bm8=</last-search>
-      <last-pattern encoding="base64">bm8=</last-pattern>
+      <last-search encoding="base64">Zmx1c2g=</last-search>
+      <last-pattern encoding="base64">Zmx1c2g=</last-pattern>
       <last-dir encoding="base64">MQ==</last-dir>
       <show-last encoding="base64">dHJ1ZQ==</show-last>
     </search>

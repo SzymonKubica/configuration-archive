@@ -32,25 +32,25 @@
     "NonModalCommitCustomization.IsApplied": "true",
     "RunOnceActivity.se.text.search": "true",
     "SettingsSearchHistory": "shortcuts\nwindows",
-    "appcds.runOnSecondStart": "IC-221.5080.210-5f7257183a861aa0ce90986028cec8b4d8ea9fd2636731c07ead7a19b85f48f0",
+    "appcds.runOnSecondStart": "IC-221.5591.52-c06ee73103ceb7407093306d1d3f6768b7f330b110c4762e10f88df84a5185c6",
     "ask.about.ctrl.y.shortcut.v2": "true",
     "build.toolwindow.Build Output.selection.state": "com.intellij.build.BuildTreeConsoleView",
     "build.toolwindow.Sync.selection.state": "com.intellij.build.BuildTreeConsoleView",
-    "bundled.plugins.list.saved.version": "IC-221.5080.210",
+    "bundled.plugins.list.saved.version": "IC-221.5591.52",
     "defaultJdkConfigured": "true",
     "defaultpackageserviceconfig.fulltext": "https://package-search.services.jetbrains.com/api/search/idea/fulltext",
     "defaultpackageserviceconfig.suggest": "https://package-search.services.jetbrains.com/api/search/idea/suggest",
-    "defaultpackageserviceconfig.updated.ts": "1651820597911",
+    "defaultpackageserviceconfig.updated.ts": "1653570998071",
     "eclipse.projects.detected": "",
-    "file.gist.reindex.count": "1",
+    "file.gist.reindex.count": "2",
     "fileTypeChangedCounter": "1",
-    "gotit.previous.run": "IC-221.5080.210",
+    "gotit.previous.run": "IC-221.5591.52",
     "ide.memory.adjusted": "true",
     "ide.updates.whats.new.shown.for": "221",
-    "ideavim.statistics.timestamp": "1651820596027",
-    "installed.kotlin.plugin.version": "221-1.6.20-release-285-IJ5080.210",
+    "ideavim.statistics.timestamp": "1653570994246",
+    "installed.kotlin.plugin.version": "221-1.6.21-release-337-IJ5591.52",
     "last_opened_file_path": "/home/szymon/.config/ConfigFiles/settings.zip",
-    "registry.to.advanced.settings.migration.build": "IC-221.5080.210",
+    "registry.to.advanced.settings.migration.build": "IC-221.5591.52",
     "tasks.pass.word.conversion.enforced": "true"
   },
   "keyToStringList": {
@@ -66,9 +66,4 @@
     ]
   }
 }]]></component>
-  <component name="TerminalCommandHistoryManager">
-    <command-history-files>
-      <command-history-file filename="Clean2048-history" project-path="$USER_HOME$/Projects/Clean2048" last-access-time="1650825145741" />
-    </command-history-files>
-  </component>
 </application>
