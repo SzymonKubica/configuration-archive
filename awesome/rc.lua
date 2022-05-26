@@ -58,7 +58,7 @@ end
 --
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/redTheme.lua")
-beautiful.font = "sans 11"
+beautiful.font = "sans 9"
 --beautiful.font = "JetBrains Mono Nerd Font 10"
 
 -- This is used later as the default terminal and editor to run.
@@ -533,7 +533,7 @@ globalkeys = gears.table.join(
     -- Prompt
     awful.key({ modkey },            "space",     function () 
 			-- Run dmenu instead of the default run prompt
-			awful.util.spawn("dmenu_run -b -q -nb '#181818' -sb '#af0000' -sf '#181818' -h 60 -fn 'JetBrains Mono Nerd Font-12'") end,
+			awful.util.spawn("dmenu_run -b -q -nb '#181818' -sb '#af0000' -sf '#181818' -h 60 -fn 'JetBrains Mono Nerd Font-10'") end,
 			--awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
