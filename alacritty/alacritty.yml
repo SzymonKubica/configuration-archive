@@ -187,7 +187,7 @@ opacity: 0.9
   #builtin_box_drawing: true
 
 font:
-  size: 11.0
+  size: 9.0
   normal:
     family: JetBrains Mono Nerd Font
 
