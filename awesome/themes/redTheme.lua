@@ -62,16 +62,6 @@ theme.hotkeys_border_color = minimizeDark
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
 
--- Generate taglist squares:
-
---local taglist_square_size = dpi(4)
---theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-  --  taglist_square_size, theme.fg_normal
---)
---theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-  --  taglist_square_size, theme.fg_normal
---)
-
 -- Make the entries in the tasklist simple
 theme.tasklist_plain_task_name = true
 theme.tasklist_disable_task_name = true
