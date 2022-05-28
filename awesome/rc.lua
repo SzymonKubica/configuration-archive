@@ -24,6 +24,8 @@ local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
 local menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
+
+-- Utilities
 local screenshot = require("awesomewm-screenshot.screenshot")
 
 -- Adjusts the dpi automatically
@@ -56,6 +58,7 @@ end
 
 -- {{{ Variable definitions
 --
+
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/redTheme.lua")
 beautiful.font = "sans 9"
@@ -75,7 +78,7 @@ modkey2 = "Mod4"
 kbdcfg = {}
 kbdcfg.cmd = "setxkbmap"
 kbdcfg.layout = { { "us", "" }, { "pl", "" } }
-kbdcfg.current = 1  -- de is our default layout
+kbdcfg.current = 1 
 kbdcfg.widget = wibox.widget.textbox()
 kbdcfg.widget.font =  "JetBrains Mono Nerd Font 10"
 kbdcfg.widget:set_text(" " .. kbdcfg.layout[kbdcfg.current][1] .. " ")
@@ -95,20 +98,6 @@ awful.util.table.join(awful.button({ }, 1, function () kbdcfg.switch() end))
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.spiral.dwindle,
-    -- awful.layout.suit.floating,
-    -- awful.layout.suit.tile.left,
-    -- awful.layout.suit.tile.bottom,
-    --awful.layout.suit.tile.top,
-    --awful.layout.suit.fair,
-    --awful.layout.suit.fair.horizontal,
-    --awful.layout.suit.spiral,
-    --awful.layout.suit.max,
-    --awful.layout.suit.max.fullscreen,
-    --awful.layout.suit.magnifier,
-    --awful.layout.suit.corner.nw,
-    -- awful.layout.suit.corner.ne,
-    -- awful.layout.suit.corner.sw,
-    -- awful.layout.suit.corner.se,
 }
 
 -- {{{ Menu
@@ -353,7 +342,6 @@ awful.screen.connect_for_each_screen(function(s)
 						separator,
 						menu_widget(),
 						separator,
-            --s.mylayoutbox,
         },
     }
 end)
@@ -403,20 +391,6 @@ globalkeys = gears.table.join(
               {description = "go back", group = "tag"}),
     awful.key({ modkey2,           }, "Escape", function() awful.spawn.with_shell("bash ~/.local/bin/lock") end,
               {description = "lock", group = "awesome"}),
-
--- Default configuration for client focus.
---     awful.key({ modkey,           }, "j",
---         function ()
---             awful.client.focus.byidx( 1)
---         end,
---         {description = "focus next by index", group = "client"}
---     ),
---     awful.key({ modkey,           }, "k",
---         function ()
---             awful.client.focus.byidx(-1)
---         end,
---         {description = "focus previous by index", group = "client"}
---     ),
 
 -- Vim-like configuration for client focus
      awful.key({ modkey,           }, "j",
@@ -468,10 +442,6 @@ globalkeys = gears.table.join(
 		end, 
 		{description = "swap with down client", group = "client"}),
 
---     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end,
---               {description = "swap with next client by index", group = "client"}),
---     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
-              --{description = "swap with previous client by index", group = "client"}),
     awful.key({ modkey, "Mod4" }, "j", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
     awful.key({ modkey, "Mod4" }, "k", function () awful.screen.focus_relative(-1) end,
@@ -509,17 +479,12 @@ globalkeys = gears.table.join(
               {description = "decrease the number of columns", group = "layout"}),
     awful.key({ modkey2, "Shift"           }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
-    --awful.key({ modkey2, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
-              --{description = "select previous", group = "layout"}),
-
     awful.key({ modkey, "Mod4" }, "n",
               function ()
                   local c = awful.client.restore()
                   -- Focus restored client
                   if c then
-                    c:emit_signal(
-                        "request::activate", "key.unminimize", {raise = true}
-                    )
+                    c:emit_signal("request::activate", "key.unminimize", {raise = true})
                   end
               end,
               {description = "restore minimized", group = "client"}),
@@ -534,7 +499,6 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "space",     function () 
 			-- Run dmenu instead of the default run prompt
 			awful.util.spawn("dmenu_run -b -q -nb '#181818' -sb '#af0000' -sf '#181818' -h 60 -fn 'JetBrains Mono Nerd Font-10'") end,
-			--awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
     awful.key({ modkey2 }, "x",
@@ -714,14 +678,6 @@ awful.rules.rules = {
         }
       }, properties = { floating = true }},
 
-    -- Add titlebars to normal clients and dialogs
-    -- { rule_any = {type = { "normal", "dialog" }
-    -- }, properties = { titlebars_enabled = true }
-    -- },
-
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
 }
 -- }}}
 
@@ -739,50 +695,6 @@ client.connect_signal("manage", function (c)
         awful.placement.no_offscreen(c)
     end
 end)
--- Add a titlebar if titlebars_enabled is set to true in the rules.
--- client.connect_signal("request::titlebars", function(c)
---     -- buttons for the titlebar
---     local buttons = gears.table.join(
---         awful.button({ }, 1, function()
---             c:emit_signal("request::activate", "titlebar", {raise = true})
---             awful.mouse.client.move(c)
---         end),
---         awful.button({ }, 3, function()
---             c:emit_signal("request::activate", "titlebar", {raise = true})
---             awful.mouse.client.resize(c)
---         end)
---     )
--- 
---     awful.titlebar(c) : setup {
---         { -- Left
---             awful.titlebar.widget.iconwidget(c),
---             buttons = buttons,
---             layout  = wibox.layout.fixed.horizontal
---         },
---         { -- Middle
---             { -- Title
---                 align  = "center",
---                 widget = awful.titlebar.widget.titlewidget(c)
---             },
---             buttons = buttons,
---             layout  = wibox.layout.flex.horizontal
---         },
---         { -- Right
---             awful.titlebar.widget.floatingbutton (c),
---             awful.titlebar.widget.maximizedbutton(c),
---             awful.titlebar.widget.stickybutton   (c),
---             awful.titlebar.widget.ontopbutton    (c),
---             awful.titlebar.widget.closebutton    (c),
---             layout = wibox.layout.fixed.horizontal()
---         },
---         layout = wibox.layout.align.horizontal
---     }
--- end)
-
--- Enable sloppy focus, so that focus follows mouse.
--- client.connect_signal("mouse::enter", function(c)
---  c:emit_signal("request::activate", "mouse_enter", {raise = false})
--- d)
 
 client.connect_signal("focus", function(c) c.border_color = "#af0000" end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
