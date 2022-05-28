@@ -30,6 +30,7 @@
   "keyToString": {
     "MarketplacePluginsSearchHistory": "vim",
     "NonModalCommitCustomization.IsApplied": "true",
+    "PluginConfigurable.selectionTab": "1",
     "RunOnceActivity.se.text.search": "true",
     "SettingsSearchHistory": "shortcuts\nwindows",
     "appcds.runOnSecondStart": "IC-221.5591.52-c06ee73103ceb7407093306d1d3f6768b7f330b110c4762e10f88df84a5185c6",
@@ -47,7 +48,7 @@
     "gotit.previous.run": "IC-221.5591.52",
     "ide.memory.adjusted": "true",
     "ide.updates.whats.new.shown.for": "221",
-    "ideavim.statistics.timestamp": "1653570994246",
+    "ideavim.statistics.timestamp": "1653756417044",
     "installed.kotlin.plugin.version": "221-1.6.21-release-337-IJ5591.52",
     "last_opened_file_path": "/home/szymon/.config/ConfigFiles/settings.zip",
     "registry.to.advanced.settings.migration.build": "IC-221.5591.52",

@@ -29,7 +29,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/Clean2048.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1762">
+            <state relative-caret-position="24">
               <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
             </state>
           </provider>
@@ -38,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/GameEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4637">
-              <caret line="148" column="20" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="20" />
+            <state relative-caret-position="758">
+              <caret line="72" column="26" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -48,7 +48,7 @@
   </component>
   <component name="FileTypeUsageLocalSummary">
     <fileType name="JAVA">
-      <summary usageCount="12" lastUsed="1653571130809" />
+      <summary usageCount="18" lastUsed="1653756451997" />
     </fileType>
   </component>
   <component name="IdeDocumentHistory">
@@ -172,34 +172,28 @@
       <screen x="0" y="0" width="3840" height="2400" />
     </state>
     <state x="1337" y="567" width="1172" height="1322" key="FileChooserDialogImpl/0.0.3840.2400@0.0.3840.2400" timestamp="1650866847525" />
-    <state x="1165" y="445" width="2665" height="1931" key="SettingsEditor" timestamp="1650867860251">
+    <state x="714" y="305" width="2665" height="1931" key="SettingsEditor" timestamp="1653756533710">
       <screen x="0" y="0" width="3840" height="2400" />
     </state>
-    <state x="1165" y="445" width="2665" height="1931" key="SettingsEditor/0.0.3840.2400@0.0.3840.2400" timestamp="1650867860251" />
+    <state x="714" y="305" width="2665" height="1931" key="SettingsEditor/0.0.3840.2400@0.0.3840.2400" timestamp="1653756533710" />
     <state x="820" y="540" width="2206" height="1376" key="Vcs.Push.Dialog.v2" timestamp="1650868557455">
       <screen x="0" y="0" width="3840" height="2400" />
     </state>
     <state x="820" y="540" width="2206" height="1376" key="Vcs.Push.Dialog.v2/0.0.3840.2400@0.0.3840.2400" timestamp="1650868557455" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/Grid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/Grid.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/Clean2048.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1762">
+        <state relative-caret-position="24">
           <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/GameEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4637">
-          <caret line="148" column="20" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="20" />
+        <state relative-caret-position="758">
+          <caret line="72" column="26" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
         </state>
       </provider>
     </entry>
