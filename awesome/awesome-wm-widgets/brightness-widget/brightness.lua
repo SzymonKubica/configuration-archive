@@ -108,7 +108,7 @@ local function worker(user_args)
                 layout = wibox.container.place
             },
             max_value = 100,
-            thickness = 2,
+            thickness = 3,
             start_angle = 4.71238898, -- 2pi*3/4
             forced_height = 40,
             forced_width = 40,

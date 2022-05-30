@@ -8,8 +8,8 @@ local widget = {}
 function widget.get_widget(widgets_args)
     local args = widgets_args or {}
 
-    local thickness = args.thickness or 2
-    local main_color = args.main_color or beautiful.fg_color 
+    local thickness = args.thickness or 3
+   local main_color = args.main_color or beautiful.fg_color 
     local bg_color = args.bg_color or '#ffffff11'
     local mute_color = args.mute_color or '#af0000'
     local size = args.size or 40

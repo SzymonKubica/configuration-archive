@@ -98,8 +98,10 @@ local function worker(user_args)
         local old_cursor, old_wibox
         row:connect_signal("mouse::enter", function()
             local wb = mouse.current_wibox
-            old_cursor, old_wibox = wb.cursor, wb
-            wb.cursor = "hand1"
+						if wb then
+							old_cursor, old_wibox = wb.cursor, wb
+							wb.cursor = "hand1"
+						end
         end)
         row:connect_signal("mouse::leave", function()
             if old_wibox then

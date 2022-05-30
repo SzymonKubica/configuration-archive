@@ -13,6 +13,7 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+local xrandr = require("xrandr")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -322,6 +323,7 @@ awful.screen.connect_for_each_screen(function(s)
 							width = 200,
 							color = "#af0000",
 						}),
+						separator,
             mytextclock,
 						kbdcfg.widget,
 						separator,
@@ -357,6 +359,8 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+		awful.key({}, "XF86Display", function() xrandr.xrandr() end,
+        {description = "Change screen layout", group = "media"}),
 		awful.key({}, "XF86AudioRaiseVolume", function() volume_widget:inc(5) end,
         {description = "Increase volume", group = "media"}),
 		awful.key({}, "XF86AudioLowerVolume", function() volume_widget:dec(5) end,
@@ -687,6 +691,11 @@ client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
     -- i.e. put it at the end of others instead of setting it master.
     -- if not awesome.startup then awful.client.setslave(c) end
+		-- {{{ Uncomment for rounded corners
+		-- c.shape = function(cr, w, h)
+			-- gears.shape.rounded_rect(cr, w, h, 25)
+		--end
+		-- }}}
 
     if awesome.startup
       and not c.size_hints.user_position
@@ -701,6 +710,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostart
-awful.spawn.with_shell("picom --experimental-backends")
+awful.spawn.with_shell("compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION")
+awful.spawn.with_shell("~/.config/awesome/setup_monitors.sh")
+-- awful.spawn.with_shell("picom --experimental-backends")
 awful.spawn.with_shell("nitrogen --restore &")
 
