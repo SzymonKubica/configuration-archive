@@ -3,6 +3,7 @@
 local gtable  = require("gears.table")
 local spawn   = require("awful.spawn")
 local naughty = require("naughty")
+local gears   = require("gears")
 --
 ---- A path to a fancy icon
 --local icon_path = ""
@@ -119,9 +120,13 @@ end
 		state.index = nil
 	else
 		label, action = next[1], next[2]
+		spawn.with_shell("~/.config/awesome/setup_monitors.sh")
 	end
 	state.cid = naughty.notify({ text = label,
 	icon = icon_path,
+	shape = function (cr, w, h) 
+		gears.shape.rounded_rect(cr, w, h, 25)
+	end,
 	timeout = 4,
 	screen = mouse.screen,
 	replaces_id = state.cid,

@@ -8,11 +8,12 @@
 -- @copyright 2020 Pavel Makhov
 -------------------------------------------------
 
-local awful = require("awful")
+local awful			= require("awful")
 local beautiful = require("beautiful")
-local naughty = require("naughty")
-local wibox = require("wibox")
-local watch = require("awful.widget.watch")
+local naughty		= require("naughty")
+local gears			= require("gears")
+local wibox			= require("wibox")
+local watch			= require("awful.widget.watch")
 
 local HOME = os.getenv("HOME")
 local WIDGET_DIR = HOME .. '/.config/awesome/awesome-wm-widgets/batteryarc-widget'
@@ -75,6 +76,9 @@ local function worker(user_args)
         naughty.notify {
             icon = warning_msg_icon,
             icon_size = 100,
+						shape = function (cr, w, h)
+							gears.shape.rounded_rect(cr, w, h, 25)
+						end,
             text = warning_msg_text,
             title = warning_msg_title,
             timeout = 25, -- show the warning for a longer time
@@ -144,10 +148,13 @@ local function worker(user_args)
                     naughty.destroy(notification)
                     notification = naughty.notify {
                         text = stdout,
+												shape = function (cr, w, h)
+													gears.shape.rounded_rect(cr, w, h, 25)
+												end,
                         title = "Battery status",
                         timeout = 5,
                         max_width = 600,
-												height = 170,
+												height = 145,
                         position = notification_position,
                     }
                 end)
