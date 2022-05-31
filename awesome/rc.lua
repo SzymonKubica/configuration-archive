@@ -208,7 +208,7 @@ awful.screen.connect_for_each_screen(function(s)
 		screen  = s,
 		filter  = awful.widget.taglist.filter.all,
 		buttons = taglist_buttons
-}
+		}
 
 
     -- Create a tasklist widget
@@ -302,6 +302,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({ position = "bottom", height = 60, screen = s })
 
     -- Add widgets to the wibox
+		if s.index == 1 then 
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
 				expand = "none",
@@ -346,6 +347,37 @@ awful.screen.connect_for_each_screen(function(s)
 						separator,
         },
     }
+	elseif s.index == 2 then
+	s.mywibox:setup {
+					layout = wibox.layout.align.horizontal,
+					expand = "none",
+					{ -- Left widgets
+							layout = wibox.layout.fixed.horizontal,
+							s.mytaglist,
+							s.mypromptbox,
+							separator,
+							minimiser,
+							separator,
+					},
+					s.mytasklist, -- Middle widget
+					{ -- Right widgets
+							layout = wibox.layout.fixed.horizontal,
+							separator,
+							wibox.widget.systray(),
+							separator,
+							cpu_widget({
+								width = 200,
+								color = "#af0000",
+							}),
+							separator,
+							mytextclock,
+							separator,
+							separator,
+							menu_widget(),
+							separator,
+					},
+			}
+		end
 end)
 -- }}}
 
