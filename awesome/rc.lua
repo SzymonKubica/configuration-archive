@@ -94,6 +94,19 @@ kbdcfg.widget:buttons(
 awful.util.table.join(awful.button({ }, 1, function () kbdcfg.switch() end))
 )
 
+-- Toggle switch to turn picom on/off
+local isPicomOn = true
+
+local togglePicom = function ()
+	if isPicomOn then
+		awful.spawn.with_shell("pkill picom")
+		isPicomOn = false
+	else 
+		awful.spawn.with_shell("picom --experimental-backends")
+		isPicomOn = true
+	end
+end
+
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
@@ -391,6 +404,10 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+		awful.key({}, "XF86Favorites", function() togglePicom() end,
+        {description = "Toggle picom on/off", group = "awesome"}),
+		awful.key({ modkey, }, "d", function() xrandr.xrandr() end,
+        {description = "Change screen layout", group = "media"}),
 		awful.key({}, "XF86Display", function() xrandr.xrandr() end,
         {description = "Change screen layout", group = "media"}),
 		awful.key({}, "XF86AudioRaiseVolume", function() volume_widget:inc(5) end,
@@ -744,6 +761,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Autostart
 awful.spawn.with_shell("compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION")
 awful.spawn.with_shell("~/.config/awesome/setup_monitors.sh")
--- awful.spawn.with_shell("picom --experimental-backends")
+awful.spawn.with_shell("picom --experimental-backends")
 awful.spawn.with_shell("nitrogen --restore &")
 
