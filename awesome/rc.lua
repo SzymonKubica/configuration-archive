@@ -315,7 +315,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({ position = "bottom", height = 60, screen = s })
 
     -- Add widgets to the wibox
-		if s.index == 1 then 
+		if s.geometry.x == 0 then 
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
 				expand = "none",
@@ -741,9 +741,9 @@ client.connect_signal("manage", function (c)
     -- i.e. put it at the end of others instead of setting it master.
     -- if not awesome.startup then awful.client.setslave(c) end
 		-- {{{ Uncomment for rounded corners
-		-- c.shape = function(cr, w, h)
-			-- gears.shape.rounded_rect(cr, w, h, 25)
-		--end
+		 c.shape = function(cr, w, h)
+			 gears.shape.rounded_rect(cr, w, h, 25)
+		 end
 		-- }}}
 
     if awesome.startup
