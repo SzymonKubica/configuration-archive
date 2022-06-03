@@ -83,6 +83,10 @@ theme.menu_width  = dpi(100)
 -- you wish and access them by using
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
+--
+
+-- Define wallpaper location
+theme.wallpaper = "~/Downloads/wallpaper.jpg"
 
 -- Define the image to load
 theme.titlebar_close_button_normal = themes_path.."default/titlebar/close_normal.png"
