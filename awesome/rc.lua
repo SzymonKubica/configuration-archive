@@ -348,7 +348,7 @@ awful.screen.connect_for_each_screen(function(s)
 						brightness_widget({
 							type = 'arc',
 							program = 'brillo',
-							step = 5,
+							step = 3,
 						}),
 						separator,
 						battery_arc_widget({
@@ -360,7 +360,7 @@ awful.screen.connect_for_each_screen(function(s)
 						separator,
         },
     }
-	elseif s.index == 2 then
+	else
 	s.mywibox:setup {
 					layout = wibox.layout.align.horizontal,
 					expand = "none",
@@ -385,6 +385,12 @@ awful.screen.connect_for_each_screen(function(s)
 							separator,
 							mytextclock,
 							separator,
+							kbdcfg.widget,
+							separator,
+							battery_arc_widget({
+								show_current_level = true,
+								size = 40,
+							}),
 							separator,
 							menu_widget(),
 							separator,
@@ -575,6 +581,15 @@ clientkeys = gears.table.join(
     awful.key({ modkey2,           }, "f",
         function (c)
             c.fullscreen = not c.fullscreen
+						if not c.fullscreen then
+							 c.shape = function(cr, w, h)
+								 gears.shape.rounded_rect(cr, w, h, 25)
+							 end
+						 else 
+							 c.shape = function(cr, w, h)
+								 gears.shape.rounded_rect(cr, w, h, 0)
+							 end
+						end
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
@@ -671,11 +686,11 @@ clientbuttons = gears.table.join(
     awful.button({ }, 1, function (c)
         c:emit_signal("request::activate", "mouse_click", {raise = true})
     end),
-    awful.button({ modkey }, 1, function (c)
+    awful.button({ modkey2 }, 1, function (c)
         c:emit_signal("request::activate", "mouse_click", {raise = true})
         awful.mouse.client.move(c)
     end),
-    awful.button({ modkey }, 3, function (c)
+    awful.button({ modkey2 }, 3, function (c)
         c:emit_signal("request::activate", "mouse_click", {raise = true})
         awful.mouse.client.resize(c)
     end)
@@ -743,9 +758,11 @@ client.connect_signal("manage", function (c)
     -- i.e. put it at the end of others instead of setting it master.
     -- if not awesome.startup then awful.client.setslave(c) end
 		-- {{{ Uncomment for rounded corners
+		if not c.fullscreen then
 		 c.shape = function(cr, w, h)
 			 gears.shape.rounded_rect(cr, w, h, 25)
 		 end
+	 end
 		-- }}}
 
     if awesome.startup
@@ -755,13 +772,12 @@ client.connect_signal("manage", function (c)
         awful.placement.no_offscreen(c)
     end
 end)
-
 client.connect_signal("focus", function(c) c.border_color = "#af0000" end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
 -- Autostart
 awful.spawn.with_shell("compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION")
-awful.spawn.with_shell("~/.config/awesome/setup_monitors.sh")
 awful.spawn.with_shell("picom --experimental-backends")
+awful.spawn.with_shell("~/.config/awesome/setup_monitors.sh")
 

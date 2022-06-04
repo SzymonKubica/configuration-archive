@@ -24,7 +24,7 @@ local function worker(user_args)
 
     local args = user_args or {}
 
-    local font = args.font or 'sans 6'
+    local font = args.font or 'sans 5'
     local arc_thickness = args.arc_thickness or 3
     local show_current_level = args.show_current_level or false
     local size = args.size or 18

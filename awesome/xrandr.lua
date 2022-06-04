@@ -61,9 +61,9 @@ local function menu()
 		local cmd = "xrandr"
 		-- Enabled outputs
 		for i, o in pairs(choice) do
-			if o == "eDP1" then
+			if o == "eDP-1" then
 				cmd = cmd .. " --output " .. o .. " --mode 3840x2400 --pos 0x0"
-			elseif o == "HDMI1" then
+			elseif o == "HDMI-1" then
 				cmd = cmd .. " --output " .. o .. " --mode 2560x1080 --pos 3840x0 --scale 2x2"
 			else
 				cmd = cmd .. " --output " .. o .. " --auto"
