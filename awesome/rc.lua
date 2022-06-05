@@ -778,6 +778,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart
 awful.spawn.with_shell("compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION")
-awful.spawn.with_shell("picom --experimental-backends")
+awful.spawn.with_shell("picom -b")
 awful.spawn.with_shell("~/.config/awesome/setup_monitors.sh")
 
