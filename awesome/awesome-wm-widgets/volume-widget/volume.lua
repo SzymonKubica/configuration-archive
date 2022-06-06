@@ -186,7 +186,11 @@ local function worker(user_args)
         elseif mute == 'on' then widget:unmute()
         end
         local volume_level = string.match(stdout, "(%d?%d?%d)%%") -- (\d?\d?\d)\%)
-        volume_level = string.format("% 3d", volume_level)
+				if volume_level then 
+          volume_level = string.format("% 3d", volume_level)
+				else
+					volume_level = 0
+				end
         widget:set_volume_level(volume_level)
     end
 

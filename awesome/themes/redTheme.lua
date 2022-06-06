@@ -14,7 +14,7 @@ local theme = {}
 
 local themeRed = "#af0000"
 local themeDark = "#090909"
-local minimizeDark = "#444444"
+local minimizeDark = "#33393b"
 local intermediateDark = "#191919"
 local chargingColor = "#03fcf0"
 
