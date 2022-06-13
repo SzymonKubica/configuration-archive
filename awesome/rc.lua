@@ -191,7 +191,7 @@ local function set_wallpaper(s)
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
-        gears.wallpaper.maximized(wallpaper, s, true)
+        gears.wallpaper.maximized(wallpaper, s, false, {0, 0})
     end
 end
 
@@ -777,5 +777,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Autostart
 awful.spawn.with_shell("compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION")
 awful.spawn.with_shell("picom -b")
+awful.spawn.with_shell("libinput-gestures-setup start")
 awful.spawn.with_shell("~/.config/awesome/setup_monitors.sh")
 

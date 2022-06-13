@@ -131,7 +131,7 @@ local function worker(user_args)
 
                 show_battery_warning()
             end
-        elseif charge >= 15 and charge < 40 then
+        elseif charge >= 15 and charge < 30 then
             widget.colors = { medium_level_color }
         else
             widget.colors = { main_color }

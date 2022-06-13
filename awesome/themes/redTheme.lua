@@ -14,7 +14,7 @@ local theme = {}
 
 local themeRed = "#af0000"
 local themeDark = "#090909"
-local minimizeDark = "#33393b"
+local minimizeDark = "#444444"
 local intermediateDark = "#191919"
 local chargingColor = "#03fcf0"
 
@@ -86,7 +86,7 @@ theme.menu_width  = dpi(100)
 --
 
 -- Define wallpaper location
-theme.wallpaper = "~/Downloads/wallpaper.jpg"
+theme.wallpaper = "~/.config/awesome/themes/ThinkpadWallpaper.jpeg"
 
 -- Define the image to load
 theme.titlebar_close_button_normal = themes_path.."default/titlebar/close_normal.png"

@@ -13,7 +13,7 @@ function scrot_selection()
 end
 
 function scrot_selection_delete()
-    scrot("scrot -s " .. screenshot .. " -e 'xclip -selection c -t image/png < $f && rm $f'", scrot_callback, "Take a screenshot of selection")
+    scrot("scrot --line style=solid,width=3,color=\"white\" -s " .. screenshot .. " -e 'xclip -selection c -t image/png < $f && rm $f'", scrot_callback, "Take a screenshot of selection")
 end
 
 function scrot_window()
