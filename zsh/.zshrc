@@ -4,6 +4,11 @@ if [[ -e ~/.config/zsh/zsh-config ]]; then
   source ~/.config/zsh/zsh-config
 fi
 
+# Enable and configure zsh vi mode
+set -o vi
+bindkey -M viins 'ii' vi-cmd-mode
+bindkey "^?" backward-delete-char
+
 alias dmenu="dmenu_run -b -q -nb '#181818' -sb '#af0000' -sf '#181818' -h 60 -fn 'JetBrains Mono Nerd Font-12'"
 alias manual="~/./Projects/manual"
 alias lock="bash ~/.local/bin/lock"
