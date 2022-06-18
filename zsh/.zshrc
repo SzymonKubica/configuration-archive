@@ -20,6 +20,7 @@ alias nf='clear; neofetch'
 alias 2048='java -jar ~/Projects/Clean2048.jar'
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+alias m='ncmpcpp'
 
 alias ssh_login='./.ssh_login'
 alias update='./.update'
@@ -29,7 +30,7 @@ alias update='./.update'
 export XDG_DATA_HOME="$HOME"/.local/share
 export XDG_CACHE_HOME="$HOME"/.cache
 export XDG_STATE_HOME="$HOME"/.local/state
-
+export LC_ALL="en_US.UTF-8"
 
 autoload -U compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION && compinit -u -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 export PATH

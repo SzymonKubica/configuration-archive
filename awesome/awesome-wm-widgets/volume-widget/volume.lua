@@ -171,7 +171,7 @@ local function worker(user_args)
     local mixer_cmd = args.mixer_cmd or 'pavucontrol'
     local widget_type = args.widget_type
     local refresh_rate = args.refresh_rate or 1
-    local step = args.step or 5
+    local step = args.step or 2
     local device = args.device or 'pulse'
 
     if widget_types[widget_type] == nil then

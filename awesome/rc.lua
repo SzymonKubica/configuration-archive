@@ -387,6 +387,10 @@ awful.screen.connect_for_each_screen(function(s)
 							separator,
 							kbdcfg.widget,
 							separator,
+							volume_widget({
+								widget_type = 'arc'
+							}),
+							separator,
 							battery_arc_widget({
 								show_current_level = true,
 								size = 40,
