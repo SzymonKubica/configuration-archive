@@ -19,6 +19,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+
 -- Widgets
 local battery_arc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc") 
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
@@ -432,6 +433,10 @@ globalkeys = gears.table.join(
         {description = "Toggle mic mute", group = "media"}),
 		awful.key({}, "XF86MonBrightnessUp", function() brightness_widget:inc() end,
         {description = "Increase brightness", group = "media"}),
+		awful.key({modkey, modkey2}, "i", function() brightness_widget:inc() end,
+        {description = "Increase brightness", group = "media"}),
+		awful.key({modkey, modkey2}, "u", function() brightness_widget:dec() end,
+			{description = "Decrease brightness", group = "media"}),
 		awful.key({ modkey, }, "Print", scrot_full,
 			{description = "Take a screenshot of entire screen", group = "screenshot"}),
 		awful.key({ }, "Print", scrot_selection_delete,
