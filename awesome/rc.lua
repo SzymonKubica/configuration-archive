@@ -109,6 +109,20 @@ local togglePicom = function ()
 end
 
 
+-- Toggle play/pause 
+local isMusicPlaying = true
+
+local togglePlayPause = function ()
+	if isMusicPlaying then
+		awful.spawn.with_shell("mpc pause")
+		isMusicPlaying = false
+	else 
+		awful.spawn.with_shell("mpc play")
+		isMusicPlaying = true
+	end
+end
+
+
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
@@ -423,6 +437,12 @@ globalkeys = gears.table.join(
         {description = "Change screen layout", group = "media"}),
 		awful.key({}, "XF86Display", function() xrandr.xrandr() end,
         {description = "Change screen layout", group = "media"}),
+		awful.key({}, "XF86AudioPlay", function() togglePlayPause() end,
+        {description = "Play/Pause music", group = "media"}),
+		awful.key({}, "XF86AudioNext", function() awful.spawn.with_shell("mpc next") end,
+        {description = "Play next track", group = "media"}),
+		awful.key({}, "XF86AudioPrev", function() awful.spawn.with_shell("mpc prev") end,
+        {description = "Play previous track", group = "media"}),
 		awful.key({}, "XF86AudioRaiseVolume", function() volume_widget:inc(5) end,
         {description = "Increase volume", group = "media"}),
 		awful.key({}, "XF86AudioLowerVolume", function() volume_widget:dec(5) end,
