@@ -28,7 +28,6 @@ local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightne
 local menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 
 -- Utilities
-local screenshot = require("awesomewm-screenshot.screenshot")
 
 -- Adjusts the dpi automatically
 awful.screen.set_auto_dpi_enabled( true )
@@ -457,16 +456,12 @@ globalkeys = gears.table.join(
         {description = "Increase brightness", group = "media"}),
 		awful.key({modkey, modkey2}, "u", function() brightness_widget:dec() end,
 			{description = "Decrease brightness", group = "media"}),
-		awful.key({ modkey, }, "Print", scrot_full,
+		awful.key({ modkey, }, "Print", function() awful.spawn.with_shell("gscreenshot -f ~/Screenshots") end,
 			{description = "Take a screenshot of entire screen", group = "screenshot"}),
-		awful.key({ }, "Print", scrot_selection_delete,
+		awful.key({ }, "Print", function() awful.spawn.with_shell("gscreenshot -s -c") end,
 			{description = "Take a screenshot of selection", group = "screenshot"}),
-		awful.key({ modkey, modkey2 }, "Print", scrot_selection,
-			{description = "Take a screenshot of selection", group = "screenshot"}),
-		awful.key({ "Shift" }, "Print", scrot_window,
-			{description = "Take a screenshot of focused window", group = "screenshot"}),
-		awful.key({ modkey2, }, "Print", scrot_delay,
-			{description = "Take a screenshot of delay", group = "screenshot"}),
+		awful.key({ modkey, modkey2 }, "Print", function() awful.spawn.with_shell("gscreenshot -s -c") end,
+			{description = "Take a screenshot of selection and save", group = "screenshot"}),
 		awful.key({}, "XF86MonBrightnessDown", function() brightness_widget:dec() end,
 			{description = "Decrease brightness", group = "media"}),
     awful.key({ modkey2,           }, "space",      function () kbdcfg.switch() end,
