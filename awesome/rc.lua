@@ -21,7 +21,7 @@ require("awful.hotkeys_popup.keys")
 
 
 -- Widgets
-local battery_arc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc") 
+local battery_arc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
@@ -71,7 +71,7 @@ editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
--- Swapped the modkey to be the control key. That way keybindings on the left can be accessed using the right ctrl 
+-- Swapped the modkey to be the control key. That way keybindings on the left can be accessed using the right ctrl
 modkey = "Control"
 modkey2 = "Mod4"
 
@@ -79,7 +79,7 @@ modkey2 = "Mod4"
 kbdcfg = {}
 kbdcfg.cmd = "setxkbmap"
 kbdcfg.layout = { { "us", "" }, { "pl", "" } }
-kbdcfg.current = 1 
+kbdcfg.current = 1
 kbdcfg.widget = wibox.widget.textbox()
 kbdcfg.widget.font =  "JetBrains Mono Nerd Font 10"
 kbdcfg.widget:set_text(" " .. kbdcfg.layout[kbdcfg.current][1] .. " ")
@@ -101,21 +101,21 @@ local togglePicom = function ()
 	if isPicomOn then
 		awful.spawn.with_shell("pkill picom")
 		isPicomOn = false
-	else 
+	else
 		awful.spawn.with_shell("picom --experimental-backends")
 		isPicomOn = true
 	end
 end
 
 
--- Toggle play/pause 
+-- Toggle play/pause
 local isMusicPlaying = true
 
 local togglePlayPause = function ()
 	if isMusicPlaying then
 		awful.spawn.with_shell("mpc pause")
 		isMusicPlaying = false
-	else 
+	else
 		awful.spawn.with_shell("mpc play")
 		isMusicPlaying = true
 	end
@@ -311,7 +311,7 @@ awful.screen.connect_for_each_screen(function(s)
 				minimise_all_clients_on_current_tag()
 				minimiser.widget.color = minimizeDark
 				minimiser.on = false
-			else 
+			else
 				maximise_all_clients_on_current_tag()
 				minimiser.widget.color = themeRed
 				minimiser.on = true
@@ -319,7 +319,7 @@ awful.screen.connect_for_each_screen(function(s)
 		end
 
 		minimiser.widget:buttons(
-			awful.util.table.join(awful.button({ }, 1, function () 
+			awful.util.table.join(awful.button({ }, 1, function ()
 			minimiser:toggle()end))
 		)
 
@@ -329,7 +329,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mywibox = awful.wibar({ position = "bottom", height = 60, screen = s })
 
     -- Add widgets to the wibox
-		if s.geometry.x == 0 then 
+		if s.geometry.x == 0 then
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
 				expand = "none",
@@ -432,7 +432,7 @@ globalkeys = gears.table.join(
         {description = "Toggle picom on/off", group = "awesome"}),
 		awful.key({modkey, "Shift"}, "d", function() togglePicom() end,
         {description = "Toggle picom on/off", group = "awesome"}),
-		awful.key({ modkey, }, "d", function() xrandr.xrandr() end,
+		awful.key({ modkey, modkey2 }, "d", function() xrandr.xrandr() end,
         {description = "Change screen layout", group = "media"}),
 		awful.key({}, "XF86Display", function() xrandr.xrandr() end,
         {description = "Change screen layout", group = "media"}),
@@ -462,8 +462,6 @@ globalkeys = gears.table.join(
 			{description = "Take a screenshot of selection", group = "screenshot"}),
 		awful.key({ modkey, modkey2 }, "Print", function() awful.spawn.with_shell("gscreenshot -s -c") end,
 			{description = "Take a screenshot of selection and save", group = "screenshot"}),
-		awful.key({}, "XF86MonBrightnessDown", function() brightness_widget:dec() end,
-			{description = "Decrease brightness", group = "media"}),
     awful.key({ modkey2,           }, "space",      function () kbdcfg.switch() end,
               {description="Change keyboard layout", group="input"}),
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
@@ -507,31 +505,31 @@ globalkeys = gears.table.join(
                {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
-		awful.key({ modkey, "Shift"}, "h", function () 
+		awful.key({ modkey, "Shift"}, "h", function ()
 			awful.client.swap.global_bydirection("left")
-		end, 
+		end,
 		{description = "swap with left client", group = "client"}),
 
-		awful.key({ modkey, "Shift"}, "l", function () 
+		awful.key({ modkey, "Shift"}, "l", function ()
 			awful.client.swap.global_bydirection("right")
-		end, 
+		end,
 		{description = "swap with right client", group = "client"}),
 
-		awful.key({ modkey, "Shift"}, "k", function () 
+		awful.key({ modkey, "Shift"}, "k", function ()
 			awful.client.swap.global_bydirection("up")
-		end, 
+		end,
 		{description = "swap with up client", group = "client"}),
 
-		awful.key({ modkey, "Shift"}, "j", function () 
+		awful.key({ modkey, "Shift"}, "j", function ()
 			awful.client.swap.global_bydirection("down")
-		end, 
+		end,
 		{description = "swap with down client", group = "client"}),
 
     awful.key({ modkey, "Mod4" }, "j", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
     awful.key({ modkey, "Mod4" }, "k", function () awful.screen.focus_relative(-1) end,
               {description = "focus the previous screen", group = "screen"}),
-    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
+    awful.key({ modkey, "Shift" }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
     awful.key({ modkey2,           }, "Tab",
         function ()
@@ -581,7 +579,7 @@ globalkeys = gears.table.join(
 
 
     -- Prompt
-    awful.key({ modkey },            "space",     function () 
+    awful.key({ modkey },            "space",     function ()
 			-- Run dmenu instead of the default run prompt
 			awful.util.spawn("dmenu_run -b -q -nb '#181818' -sb '#af0000' -sf '#181818' -h 60 -fn 'JetBrains Mono Nerd Font-10'") end,
               {description = "run prompt", group = "launcher"}),
@@ -609,7 +607,7 @@ clientkeys = gears.table.join(
 							 c.shape = function(cr, w, h)
 								 gears.shape.rounded_rect(cr, w, h, 25)
 							 end
-						 else 
+						 else
 							 c.shape = function(cr, w, h)
 								 gears.shape.rounded_rect(cr, w, h, 0)
 							 end
