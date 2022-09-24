@@ -456,6 +456,8 @@ globalkeys = gears.table.join(
         {description = "Increase brightness", group = "media"}),
 		awful.key({modkey, modkey2}, "u", function() brightness_widget:dec() end,
 			{description = "Decrease brightness", group = "media"}),
+		awful.key({}, "XF86MonBrightnessDown", function() brightness_widget:dec() end,
+        {description = "Decrease brightness", group = "media"}),
 		awful.key({ modkey, }, "Print", function() awful.spawn.with_shell("gscreenshot -f ~/Screenshots") end,
 			{description = "Take a screenshot of entire screen", group = "screenshot"}),
 		awful.key({ }, "Print", function() awful.spawn.with_shell("gscreenshot -s -c") end,
