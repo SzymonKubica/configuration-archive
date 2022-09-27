@@ -21,9 +21,9 @@ local chargingColor = "#03fcf0"
 theme.font          = "sans 8"
 
 theme.bg_normal     = "#181818"
-theme.bg_focus      = themeRed 
+theme.bg_focus      = themeRed
 theme.bg_urgent     = "#00ff00"
-theme.bg_minimize   = intermediateDark 
+theme.bg_minimize   = intermediateDark
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#dadada"
@@ -31,16 +31,16 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = theme.bg_normal
 theme.fg_minimize   = minimizeDark
 
-theme.useless_gap   = dpi(3)
+theme.useless_gap   = dpi(2)
 theme.border_width  = dpi(1)
-theme.border_normal = themeDark 
-theme.border_focus  = themeRed 
+theme.border_normal = themeDark
+theme.border_focus  = themeRed
 theme.border_marked = "#91231c"
 
-theme.taglist_bg_focus = themeRed 
-theme.taglist_bg_occupied = minimizeDark 
-theme.tasklist_bg_focus = themeDark 
-theme.tasklist_fg_focus = theme.fg_focus 
+theme.taglist_bg_focus = themeRed
+theme.taglist_bg_occupied = minimizeDark
+theme.tasklist_bg_focus = themeDark
+theme.tasklist_fg_focus = theme.fg_focus
 
 theme.tasklist_shape_border_color_focus = themeRed
 theme.tasklist_shape_border_color = minimizeDark
@@ -86,7 +86,7 @@ theme.menu_width  = dpi(100)
 --
 
 -- Define wallpaper location
-theme.wallpaper = "~/.config/awesome/themes/ThinkpadWallpaper.jpeg"
+theme.wallpaper = "~/.config/awesome/themes/hexagons.png"
 
 -- Define the image to load
 theme.titlebar_close_button_normal = themes_path.."default/titlebar/close_normal.png"
@@ -142,7 +142,7 @@ theme.awesome_icon = theme_assets.awesome_icon(
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = nil 
+theme.icon_theme = nil
 
 
 return theme
