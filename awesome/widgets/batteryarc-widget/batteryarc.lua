@@ -16,7 +16,7 @@ local wibox			= require("wibox")
 local watch			= require("awful.widget.watch")
 
 local HOME = os.getenv("HOME")
-local WIDGET_DIR = HOME .. '/.config/awesome/awesome-wm-widgets/batteryarc-widget'
+local WIDGET_DIR = HOME .. '/.config/awesome/widgets/batteryarc-widget'
 
 local batteryarc_widget = {}
 
@@ -161,12 +161,12 @@ local function worker(user_args)
     end
 
 		local is_notification_visible = false
-		local function toggle_notification() 
-				if (not is_notification_visible) then 
+		local function toggle_notification()
+				if (not is_notification_visible) then
 					show_battery_status()
 					is_notification_visible = true
-				else 
-					naughty.destroy(notification) 
+				else
+					naughty.destroy(notification)
 					is_notification_visible = false
 				end
 			end

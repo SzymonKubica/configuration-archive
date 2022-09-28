@@ -13,7 +13,7 @@ local spawn = require("awful.spawn")
 local gears = require("gears")
 local beautiful = require("beautiful")
 local watch = require("awful.widget.watch")
-local utils = require("awesome-wm-widgets.volume-widget.utils")
+local utils = require("widgets.volume-widget.utils")
 
 
 local LIST_DEVICES_CMD = [[sh -c "pacmd list-sinks; pacmd list-sources"]]
@@ -24,11 +24,11 @@ local function TOG_VOLUME_CMD(device) return 'amixer -D ' .. device .. ' sset Ma
 
 
 local widget_types = {
-    icon_and_text = require("awesome-wm-widgets.volume-widget.widgets.icon-and-text-widget"),
-    icon = require("awesome-wm-widgets.volume-widget.widgets.icon-widget"),
-    arc = require("awesome-wm-widgets.volume-widget.widgets.arc-widget"),
-    horizontal_bar = require("awesome-wm-widgets.volume-widget.widgets.horizontal-bar-widget"),
-    vertical_bar = require("awesome-wm-widgets.volume-widget.widgets.vertical-bar-widget")
+    icon_and_text = require("widgets.volume-widget.widgets.icon-and-text-widget"),
+    icon = require("widgets.volume-widget.widgets.icon-widget"),
+    arc = require("widgets.volume-widget.widgets.arc-widget"),
+    horizontal_bar = require("widgets.volume-widget.widgets.horizontal-bar-widget"),
+    vertical_bar = require("widgets.volume-widget.widgets.vertical-bar-widget")
 }
 local volume = {}
 
@@ -41,7 +41,7 @@ local popup = awful.popup{
 		shape = function(cr, width, height)
     gears.shape.rounded_rect(cr, width, height, 20)
 	  end,
-		
+
     border_width = 1,
     border_color = beautiful.bg_focus,
     maximum_width = 600,
@@ -186,7 +186,7 @@ local function worker(user_args)
         elseif mute == 'on' then widget:unmute()
         end
         local volume_level = string.match(stdout, "(%d?%d?%d)%%") -- (\d?\d?\d)\%)
-				if volume_level then 
+				if volume_level then
           volume_level = string.format("% 3d", volume_level)
 				else
 					volume_level = 0

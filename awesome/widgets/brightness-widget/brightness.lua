@@ -15,7 +15,7 @@ local spawn = require("awful.spawn")
 local naughty = require("naughty")
 local beautiful = require("beautiful")
 
-local ICON_DIR = os.getenv("HOME") .. '/.config/awesome/awesome-wm-widgets/brightness-widget/'
+local ICON_DIR = os.getenv("HOME") .. '/.config/awesome/widgets/brightness-widget/'
 local get_brightness_cmd
 local set_brightness_cmd
 local inc_brightness_cmd
@@ -172,17 +172,16 @@ local function worker(user_args)
 		local is_on_base = false
 		local stashed_level = nil
 		local function toggle_between_current_base()
-			if (is_on_base) then 
+			if (is_on_base) then
 				brightness_widget:set(stashed_level)
 				is_on_base = false
-			else 
+			else
 				stashed_level = current_level
 				brightness_widget:set(base)
 				is_on_base = true
 			end
 		end
 
-				
 
     brightness_widget.widget:buttons(
             awful.util.table.join(
