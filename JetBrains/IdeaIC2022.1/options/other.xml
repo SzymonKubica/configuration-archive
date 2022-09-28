@@ -23,39 +23,42 @@
     </option>
   </component>
   <component name="NotRoamableUiSettings">
-    <option name="fontScale" value="1.0" />
+    <option name="fontScale" value="0.75" />
     <option name="fontSize" value="32.0" />
   </component>
   <component name="PropertyService"><![CDATA[{
   "keyToString": {
     "MarketplacePluginsSearchHistory": "vim",
+    "NextRunPlatformUpdateBuild": "IC-222.3739.54/2022.2.1",
+    "NextRunPlatformUpdateVersion": "2022.2.1",
     "NonModalCommitCustomization.IsApplied": "true",
     "PluginConfigurable.selectionTab": "1",
     "RunOnceActivity.se.text.search": "true",
-    "SettingsSearchHistory": "shortcuts\nwindows",
-    "appcds.runOnSecondStart": "IC-221.5591.52-c06ee73103ceb7407093306d1d3f6768b7f330b110c4762e10f88df84a5185c6",
+    "SettingsSearchHistory": "jdk\ncustom vm options\nshortcuts\nwindows",
+    "appcds.runOnSecondStart": "IC-221.6008.13-492679de9339d374700605b70e5795900de30423132afa5f97a366542f8e7687",
     "ask.about.ctrl.y.shortcut.v2": "true",
     "build.toolwindow.Build Output.selection.state": "com.intellij.build.BuildTreeConsoleView",
     "build.toolwindow.Sync.selection.state": "com.intellij.build.BuildTreeConsoleView",
-    "bundled.plugins.list.saved.version": "IC-221.5591.52",
+    "bundled.plugins.list.saved.version": "IC-221.6008.13",
     "defaultJdkConfigured": "true",
     "defaultpackageserviceconfig.fulltext": "https://package-search.services.jetbrains.com/api/search/idea/fulltext",
     "defaultpackageserviceconfig.suggest": "https://package-search.services.jetbrains.com/api/search/idea/suggest",
-    "defaultpackageserviceconfig.updated.ts": "1653570998071",
+    "defaultpackageserviceconfig.updated.ts": "1661805743751",
     "eclipse.projects.detected": "",
-    "file.gist.reindex.count": "2",
+    "file.gist.reindex.count": "8",
     "fileTypeChangedCounter": "1",
-    "gotit.previous.run": "IC-221.5591.52",
+    "gotit.previous.run": "IC-221.6008.13",
     "ide.memory.adjusted": "true",
     "ide.updates.whats.new.shown.for": "221",
-    "ideavim.statistics.timestamp": "1653756417044",
-    "installed.kotlin.plugin.version": "221-1.6.21-release-337-IJ5591.52",
-    "last_opened_file_path": "/home/szymon/.config/ConfigFiles/settings.zip",
-    "registry.to.advanced.settings.migration.build": "IC-221.5591.52",
+    "ideavim.statistics.timestamp": "1662011471168",
+    "installed.kotlin.plugin.version": "221-1.6.21-release-337-IJ6008.13",
+    "last_opened_file_path": "/home/szymon/.config/jdks/temurin-16.0.2",
+    "registry.to.advanced.settings.migration.build": "IC-221.6008.13",
     "tasks.pass.word.conversion.enforced": "true"
   },
   "keyToStringList": {
     "file.chooser.recent.files": [
+      "/home/szymon/.config/jdks/temurin-16.0.2",
       "/home/szymon/.config/ConfigFiles/settings.zip",
       "/home/szymon/Projects/Clean2048"
     ],
@@ -67,4 +70,9 @@
     ]
   }
 }]]></component>
+  <component name="TerminalCommandHistoryManager">
+    <command-history-files>
+      <command-history-file filename="Clean2048-history" project-path="$USER_HOME$/Projects/Clean2048" last-access-time="1661805753791" />
+    </command-history-files>
+  </component>
 </application>

@@ -1,1 +1,3 @@
--Xmx2048m
+# custom IntelliJ IDEA VM options (expand/override 'bin/idea64.vmoptions')
+-Djdk.downloader.home="~/.config/jdks"
+

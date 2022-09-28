@@ -18,12 +18,9 @@ com.intellij.plugins.visualstudiokeymap|Keymap
 com.intellij.plugins.netbeanskeymap|Keymap
 com.intellij.plugins.eclipsekeymap|Keymap
 com.intellij.platform.images|null
-com.intellij.externalSystem.dependencyUpdater|null
 com.intellij.copyright|Other Tools
 com.intellij.properties|Languages
 com.intellij.gradle|Build Tools
-com.intellij.configurationScript|null
-com.intellij.completion.ml.ranking|Other Tools
 com.intellij.java|null
 org.jetbrains.plugins.javaFX|JVM Frameworks
 org.jetbrains.kotlin|null
@@ -35,6 +32,8 @@ com.intellij.tracing.ide|null
 com.intellij.java.ide|null
 com.intellij.java-i18n|Other Tools
 com.intellij.uiDesigner|Swing
+com.intellij.configurationScript|null
+com.intellij.completion.ml.ranking|Other Tools
 com.android.tools.idea.smali|Android
 XPathView|HTML and XML
 org.intellij.intelliLang|Other Tools

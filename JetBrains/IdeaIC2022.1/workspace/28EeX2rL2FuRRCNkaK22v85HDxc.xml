@@ -29,17 +29,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/Clean2048.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+            <state relative-caret-position="-16">
+              <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/TerminalGameView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3392">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/GameEngine.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/GameView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="758">
-              <caret line="72" column="26" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
+            <state relative-caret-position="159">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/TerminalBackend.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="265">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -48,12 +75,20 @@
   </component>
   <component name="FileTypeUsageLocalSummary">
     <fileType name="JAVA">
-      <summary usageCount="18" lastUsed="1653756451997" />
+      <summary usageCount="43" lastUsed="1662011548981" />
+    </fileType>
+    <fileType name="PLAIN_TEXT">
+      <summary usageCount="4" lastUsed="1656777609297" />
+    </fileType>
+    <fileType name="Properties">
+      <summary usageCount="6" lastUsed="1662011462265" />
     </fileType>
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/src/main/java/Game2048/Grid.java" />
+      <option value="$PROJECT_DIR$/src/main/java/Game2048/GameEngine.java" />
+      <option value="$APPLICATION_CONFIG_DIR$/idea64.vmoptions" />
     </changedPaths>
   </component>
   <component name="IgnoredFileRootStore">
@@ -72,32 +107,12 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Clean2048" type="b2602c69:ProjectViewProjectNode" />
               <item name="Clean2048" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Clean2048" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Clean2048" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Clean2048" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Clean2048" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Clean2048" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Clean2048" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="Clean2048_jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Clean2048" type="b2602c69:ProjectViewProjectNode" />
@@ -129,6 +144,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="TerminalArrangementManager">
@@ -138,7 +155,7 @@
     <layout>
       <window_info id="Commit" weight="0.32990506" />
       <window_info id="Bookmarks" order="0" side_tool="true" weight="0.2497378" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.33306962" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.3328511" />
       <window_info id="Learn" order="2" />
       <window_info id="Structure" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" />
@@ -148,9 +165,9 @@
       <window_info anchor="bottom" id="TODO" order="4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Problems View" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3300866" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32979167" />
       <window_info anchor="bottom" id="Services" order="8" />
-      <window_info anchor="bottom" id="Build" order="9" />
+      <window_info anchor="bottom" id="Build" order="9" weight="0.43604165" />
       <window_info anchor="bottom" id="Dependencies" order="10" />
       <window_info anchor="right" id="Maven" order="0" />
       <window_info anchor="right" id="Notifications" order="1" weight="0.25" />
@@ -158,42 +175,78 @@
     <recentWindows>
       <value>Project</value>
       <value>Terminal</value>
+      <value>Build</value>
       <value>Commit</value>
       <value>Notifications</value>
       <value>Bookmarks</value>
     </recentWindows>
   </component>
   <component name="WindowStateProjectService">
-    <state x="1284" y="918" width="1278" height="620" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1650866854909">
+    <state x="1393" y="720" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1656776496380">
       <screen x="0" y="0" width="3840" height="2400" />
     </state>
-    <state x="1284" y="918" width="1278" height="620" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.3840.2400@0.0.3840.2400" timestamp="1650866854909" />
-    <state x="1337" y="567" width="1172" height="1322" key="FileChooserDialogImpl" timestamp="1650866847525">
+    <state x="1393" y="720" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3840.2400@0.0.3840.2400" timestamp="1656776496380" />
+    <state x="1337" y="567" width="1172" height="1322" key="FileChooserDialogImpl" timestamp="1656777318107">
       <screen x="0" y="0" width="3840" height="2400" />
     </state>
-    <state x="1337" y="567" width="1172" height="1322" key="FileChooserDialogImpl/0.0.3840.2400@0.0.3840.2400" timestamp="1650866847525" />
-    <state x="714" y="305" width="2665" height="1931" key="SettingsEditor" timestamp="1653756533710">
+    <state x="1337" y="567" width="1172" height="1322" key="FileChooserDialogImpl/0.0.3840.2400@0.0.3840.2400" timestamp="1656777318107" />
+    <state x="714" y="305" width="2665" height="1931" key="SettingsEditor" timestamp="1661806349151">
       <screen x="0" y="0" width="3840" height="2400" />
     </state>
-    <state x="714" y="305" width="2665" height="1931" key="SettingsEditor/0.0.3840.2400@0.0.3840.2400" timestamp="1653756533710" />
-    <state x="820" y="540" width="2206" height="1376" key="Vcs.Push.Dialog.v2" timestamp="1650868557455">
+    <state x="714" y="305" width="2665" height="1931" key="SettingsEditor/0.0.3840.2400@0.0.3840.2400" timestamp="1661806349151" />
+    <state x="440" y="616" width="1054" height="1114" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1656777646802">
       <screen x="0" y="0" width="3840" height="2400" />
     </state>
-    <state x="820" y="540" width="2206" height="1376" key="Vcs.Push.Dialog.v2/0.0.3840.2400@0.0.3840.2400" timestamp="1650868557455" />
+    <state x="440" y="616" width="1054" height="1114" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.3840.2400@0.0.3840.2400" timestamp="1656777646802" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/Grid.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/Clean2048.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/GameEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+        <state relative-caret-position="737">
+          <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/GameEngine.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/idea64.vmoptions">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="758">
-          <caret line="72" column="26" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
+        <state relative-caret-position="58">
+          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/Clean2048.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/TerminalBackend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/TerminalGameView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3392">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Game2048/GameView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>

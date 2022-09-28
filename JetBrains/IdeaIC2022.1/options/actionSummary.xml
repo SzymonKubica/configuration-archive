@@ -7,22 +7,34 @@
       <i c="15" l="1650868399857" />
     </e>
     <e n="ActivateProjectToolWindow">
-      <i c="23" l="1653571010454" />
+      <i c="25" l="1662011510552" />
+    </e>
+    <e n="ActivateTerminalToolWindow">
+      <i c="2" l="1661806364490" />
     </e>
     <e n="BuildArtifact">
-      <i c="3" l="1650868345215" />
+      <i c="7" l="1661806499016" />
     </e>
     <e n="CheckinProject">
       <i c="1" l="1650868544998" />
     </e>
+    <e n="CompileDirty">
+      <i c="4" l="1656777322627" />
+    </e>
+    <e n="EditCustomProperties">
+      <i c="1" l="1656776506672" />
+    </e>
+    <e n="EditCustomVmOptions">
+      <i c="5" l="1656777609167" />
+    </e>
     <e n="EditorBackSpace">
-      <i c="64" l="1653756518234" />
+      <i c="125" l="1661806300992" />
     </e>
     <e n="EditorChooseLookupItem">
       <i c="4" l="1650868338188" />
     </e>
     <e n="EditorEnter">
-      <i c="3" l="1650868333567" />
+      <i c="4" l="1656776090448" />
     </e>
     <e n="Git.Commit.And.Push.Executor">
       <i c="1" l="1650868474264" />
@@ -39,20 +51,26 @@
     <e n="NextTemplateVariable">
       <i c="1" l="1650868299501" />
     </e>
+    <e n="PasteMultiple">
+      <i c="8" l="1656777645013" />
+    </e>
     <e n="RenameElement">
       <i c="1" l="1650868290889" />
     </e>
     <e n="SaveAll">
-      <i c="4" l="1650868340221" />
+      <i c="11" l="1656777810766" />
     </e>
     <e n="ShowProjectStructureSettings">
-      <i c="1" l="1650866890834" />
+      <i c="3" l="1661806340346" />
     </e>
     <e n="ShowSettings">
-      <i c="12" l="1653756469914" />
+      <i c="19" l="1661806334231" />
     </e>
     <e n="Switcher">
       <i c="21" l="1653571065931" />
+    </e>
+    <e n="Synchronize">
+      <i c="3" l="1656776502180" />
     </e>
     <e n="ToggleLineBreakpoint">
       <i c="1" l="1651821858007" />
@@ -64,13 +82,13 @@
       <i c="1" l="1650786194300" />
     </e>
     <e n="com.intellij.ide.plugins.newui.TabbedPaneHeaderComponent$3">
-      <i c="1" l="1653599648872" />
+      <i c="4" l="1656626034187" />
     </e>
     <e n="com.intellij.notification.NotificationAction$Simple">
       <i c="1" l="1650825205055" />
     </e>
     <e n="com.intellij.openapi.actionSystem.EmptyAction$MyDelegatingAction">
-      <i c="159" l="1653572480758" />
+      <i c="224" l="1656777652101" />
     </e>
     <e n="com.intellij.openapi.fileEditor.impl.tabActions.CloseTab">
       <i c="1" l="1653571007860" />
@@ -82,19 +100,22 @@
       <i c="3" l="1653571066539" />
     </e>
     <e n="com.intellij.openapi.ui.DialogWrapper$4">
-      <i c="8" l="1653756569916" />
+      <i c="20" l="1662109632847" />
     </e>
     <e n="com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$AnCancelAction">
       <i c="1" l="1650867860238" />
     </e>
     <e n="com.intellij.toolWindow.ToolWindowHeader$HideAction">
-      <i c="5" l="1653571132821" />
+      <i c="7" l="1662011481567" />
     </e>
     <e n="com.intellij.toolWindow.ToolWindowHeader$ShowOptionsAction">
       <i c="1" l="1650825156252" />
     </e>
     <e n="com.maddyhome.idea.vim.ui.ex.ExShortcutKeyAction">
-      <i c="27" l="1653572436328" />
+      <i c="35" l="1656777810761" />
+    </e>
+    <e n="editRunConfigurations">
+      <i c="1" l="1656776494348" />
     </e>
   </component>
 </application>
