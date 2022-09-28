@@ -2,29 +2,28 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
--- Standard awesome library
-local gears = require("gears")
-local awful = require("awful")
-require("awful.autofocus")
--- Widget and layout library
-local wibox = require("wibox")
--- Theme handling library
-local beautiful = require("beautiful")
--- Notification library
-local naughty = require("naughty")
-local menubar = require("menubar")
-local xrandr = require("xrandr")
+local gears         = require("gears")
+local awful         = require("awful")
+local wibox         = require("wibox")
+local beautiful     = require("beautiful")
+local naughty       = require("naughty")
+local menubar       = require("menubar")
+local xrandr        = require("xrandr")
 local hotkeys_popup = require("awful.hotkeys_popup")
+
+require("awful.autofocus")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
 -- Widgets
-local battery_arc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
-local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
-local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
-local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
-local menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
+local battery_arc_widget = require("widgets.batteryarc-widget.batteryarc")
+local cpu_widget         = require("widgets.cpu-widget.cpu-widget")
+local volume_widget      = require("widgets.volume-widget.volume")
+local brightness_widget  = require("widgets.brightness-widget.brightness")
+local menu_widget        = require("widgets.logout-menu-widget.logout-menu")
+local minimiser          = require("widgets.minimiser.minimiser")
+local language_widget    = require("widgets.keyboard-language-widget.keyboard-language-widget")
 
 -- Utilities
 
@@ -65,33 +64,14 @@ beautiful.font = "sans 9"
 --beautiful.font = "JetBrains Mono Nerd Font 10"
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+Terminal = "alacritty"
 editor = os.getenv("EDITOR") or "vim"
-editor_cmd = terminal .. " -e " .. editor
+editor_cmd = Terminal .. " -e " .. editor
 
 -- Default modkey.
 -- Swapped the modkey to be the control key. That way keybindings on the left can be accessed using the right ctrl
 modkey = "Control"
 modkey2 = "Mod4"
-
--- Keyboard map indicator and changer widget
-kbdcfg = {}
-kbdcfg.cmd = "setxkbmap"
-kbdcfg.layout = { { "us", "" }, { "pl", "" } }
-kbdcfg.current = 1
-kbdcfg.widget = wibox.widget.textbox()
-kbdcfg.widget.font =  "JetBrains Mono Nerd Font 10"
-kbdcfg.widget:set_text(" " .. kbdcfg.layout[kbdcfg.current][1] .. " ")
-kbdcfg.switch = function ()
-		kbdcfg.current = kbdcfg.current % #(kbdcfg.layout) + 1
-		local t = kbdcfg.layout[kbdcfg.current]
-		kbdcfg.widget:set_text(" " .. t[1] .. " ")
-		os.execute( kbdcfg.cmd .. " " .. t[1] .. " " .. t[2] )
-end
--- Mouse bindings
-kbdcfg.widget:buttons(
-awful.util.table.join(awful.button({ }, 1, function () kbdcfg.switch() end))
-)
 
 -- Toggle switch to turn picom on/off
 local isPicomOn = true
@@ -131,14 +111,14 @@ awful.layout.layouts = {
 -- Create a launcher widget and a main menu
 myawesomemenu = {
    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { "manual", terminal .. " -e man awesome" },
+   { "manual", Terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", function() awesome.quit() end },
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+                                    { "open terminal", Terminal }
                                   }
                         })
 
@@ -146,7 +126,7 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
 -- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
+menubar.utils.terminal = Terminal -- Set the terminal for applications that require it
 -- }}}
 
 -- Keyboard map indicator and switcher
@@ -279,49 +259,6 @@ awful.screen.connect_for_each_screen(function(s)
 			},
     }
 
-		local themeRed = "#af0000"
-		local minimizeDark = "#444444"
-		-- Spacing widget which minimises and maximises all clients on current tag.
-		minimiser = {
-				margins = 10,
-				forced_width = 40,
-				shape        = gears.shape.circle,
-				color = themeRed,
-				valign = 'center',
-				halign = 'center',
-				on = true,
-				widget       = wibox.widget.separator(),
-		}
-
-		function minimise_all_clients_on_current_tag()
-			for _, c in ipairs(mouse.screen.selected_tag:clients()) do
-				c.minimized = true
-			end
-		end
-
-		function maximise_all_clients_on_current_tag()
-			for _, c in ipairs(mouse.screen.selected_tag:clients()) do
-				c.minimized = false
-			end
-		end
-
-		function minimiser:toggle()
-			if minimiser.on == true then
-				minimise_all_clients_on_current_tag()
-				minimiser.widget.color = minimizeDark
-				minimiser.on = false
-			else
-				maximise_all_clients_on_current_tag()
-				minimiser.widget.color = themeRed
-				minimiser.on = true
-			end
-		end
-
-		minimiser.widget:buttons(
-			awful.util.table.join(awful.button({ }, 1, function ()
-			minimiser:toggle()end))
-		)
-
 		local separator = wibox.widget.textbox(" ")
 
     -- Create the wibox
@@ -352,7 +289,7 @@ awful.screen.connect_for_each_screen(function(s)
 						}),
 						separator,
             mytextclock,
-						kbdcfg.widget,
+						language_widget.widget,
 						separator,
 						volume_widget({
 							widget_type = 'arc'
@@ -398,7 +335,7 @@ awful.screen.connect_for_each_screen(function(s)
 							separator,
 							mytextclock,
 							separator,
-							kbdcfg.widget,
+							language_widget.widget,
 							separator,
 							volume_widget({
 								widget_type = 'arc'
@@ -463,7 +400,7 @@ globalkeys = gears.table.join(
 			{description = "Take a screenshot of selection", group = "screenshot"}),
 		awful.key({ modkey, modkey2 }, "Print", function() awful.spawn.with_shell("gscreenshot -s -c") end,
 			{description = "Take a screenshot of selection and save", group = "screenshot"}),
-    awful.key({ modkey2,           }, "space",      function () kbdcfg.switch() end,
+    awful.key({ modkey2,           }, "space",      function () language_widget.switch() end,
               {description="Change keyboard layout", group="input"}),
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
@@ -542,7 +479,7 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+    awful.key({ modkey,           }, "Return", function () awful.spawn(Terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Mod4" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
