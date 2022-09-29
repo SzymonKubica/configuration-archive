@@ -1,0 +1,94 @@
+"Version of 31.05.2022.
+
+"============================================================================="
+"                             General Settings
+
+set relativenumber " Set line numbers relative to the cursor. 
+
+" Map <i,i> to <Esc>.
+imap ii <Esc> 
+
+set matchpairs+=<:> " Highlight pairs of corresponding brackets. 
+set hlsearch        " Highlight results of a search.
+set smartindent
+set smarttab
+
+" Makes tab shorter.
+set softtabstop=2
+set tabstop=2
+set shiftwidth=2
+
+" Tabs for python
+"set softtabstop=4
+"set tabstop=4
+"set shiftwidth=4
+
+
+set smartcase  "Enable smart-case search
+set ignorecase " Make search case-insensitive
+set incsearch  " Search incrementally
+
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-e> :nohl <CR><C-l>
+
+"============================================================================="
+"															Style customisation
+
+" Set block cursor in normal mode, line in insert mode.
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
+
+colorscheme default
+
+syntax on " Turn on the syntax highlighting.
+
+" Make search highlight easily readable.
+set hlsearch
+hi Visual ctermbg=Black
+hi Visual ctermfg=Cyan
+hi Search ctermbg=LightGreen
+hi Search ctermfg=Red
+
+
+hi Comment ctermfg=Grey 
+
+"============================================================================="
+"																 Vim Plug-ins 
+
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
+" Get rid of concealed text highlighting in vimtex.
+hi clear Conceal
+
+" Points to bundle directory to look for plugins.
+call plug#begin('~/.vim/bundle')
+Plug 'lervag/vimtex'
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
+" Enable ultisnips plugin
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+call plug#end()
+
+
+
+
+
