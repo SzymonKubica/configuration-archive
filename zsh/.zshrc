@@ -74,3 +74,6 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 eval "$(pyenv init -)"
 
 export PATH="$(pyenv root)/shims:$PATH"
+
+alias luamake=/home/szymon/.config/lsp/lua-language-server/3rd/luamake/luamake
+export PATH="${HOME}/.config/lsp/lua-language-server/bin:${PATH}"
