@@ -50,11 +50,9 @@ alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias m='ncmpcpp'
 
 # Configure autojump
-[[ -s /home/szymon/.autojump/etc/profile.d/autojump.sh ]]
-&& source /home/szymon/.autojump/etc/profile.d/autojump.sh
+[[ -s /home/szymon/.autojump/etc/profile.d/autojump.sh ]] && source /home/szymon/.autojump/etc/profile.d/autojump.sh
 
-autoload -U compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
-&& compinit -u -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+autoload -U compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION && compinit -u -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 export PATH
 
