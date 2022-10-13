@@ -54,6 +54,8 @@ alias m='ncmpcpp'
 
 autoload -U compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION && compinit -u -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
+# Add solana support
+PATH="/home/szymon/.local/share/solana/install/active_release/bin:$PATH"
 export PATH
 
 # Arch and AUR package finders
