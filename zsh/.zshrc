@@ -4,6 +4,9 @@ if [[ -e ~/.config/zsh/zsh-config ]]; then
   source ~/.config/zsh/zsh-config
 fi
 
+# Get the autosuggestions.
+source ~/Packages/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # XDG base directory specification
 export XDG_DATA_HOME="$HOME"/.local/share
 export XDG_CONFIG_HOME="$HOME"/.config
@@ -53,7 +56,6 @@ alias m='ncmpcpp'
 [[ -s /home/szymon/.autojump/etc/profile.d/autojump.sh ]] && source /home/szymon/.autojump/etc/profile.d/autojump.sh
 
 autoload -U compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION && compinit -u -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
-
 # Add solana support
 PATH="/home/szymon/.local/share/solana/install/active_release/bin:$PATH"
 export PATH
