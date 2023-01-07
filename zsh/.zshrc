@@ -5,7 +5,9 @@ if [[ -e ~/.config/zsh/zsh-config ]]; then
 fi
 
 # Get the autosuggestions.
-source ~/Packages/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # XDG base directory specification
 export XDG_DATA_HOME="$HOME"/.local/share
@@ -17,7 +19,6 @@ export XDG_STATE_HOME="$HOME"/.local/state
 # base directory specification to their corresponding places
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export PYENV_ROOT=$XDG_DATA_HOME/pyenv
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export LEIN_HOME="$XDG_DATA_HOME"/lein
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
@@ -26,7 +27,10 @@ export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export XCURSOR_PATH=/usr/share/icons:${XDG_DATA_HOME}/icons
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
-export ANDROID_HOME="$XDG_DATA_HOME"/android
+
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 
 # Enable Powerlevel10k instant prompt.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -50,6 +54,7 @@ alias nf='clear; neofetch'
 alias 2048='java -jar ~/Projects/Clean2048.jar'
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+alias tmux="TERM=screen-256color-bce tmux"
 alias m='ncmpcpp'
 
 # Configure autojump
