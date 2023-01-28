@@ -26,3 +26,13 @@ btop++ needs an interactive shell to run.
 2022/10/11 (08:12:14) | ===> btop++ v.1.2.12
 2022/10/11 (08:12:14) | ERROR: No tty detected!
 btop++ needs an interactive shell to run.
+
+2022/11/30 (13:50:04) | ===> btop++ v.1.2.13
+2022/11/30 (13:50:04) | ERROR: No tty detected!
+btop++ needs an interactive shell to run.
+
+2022/12/06 (15:36:18) | ===> btop++ v.1.2.13
+2022/12/06 (15:36:18) | ERROR: Failed to get size of terminal!
+
+2023/01/20 (18:04:30) | ===> btop++ v.1.2.13
+2023/01/20 (18:04:30) | ERROR: Failed to get size of terminal!
