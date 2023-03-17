@@ -67,7 +67,8 @@
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-opacity: 0.9
+window:
+  opacity: 0.9
 
   # Startup Mode (changes require restart)
   #
@@ -187,7 +188,7 @@ opacity: 0.9
   #builtin_box_drawing: true
 
 font:
-  size: 10.0
+  size: 11.0
   normal:
     family: JetBrains Mono Nerd Font
 
@@ -206,7 +207,7 @@ font:
 # Tango dark colour
 colors:
   primary:
-    background: '0x181818'
+    background: '0x121212'
     foreground: '0xd3d7cf'
   normal:
     black: '0x2e3436'

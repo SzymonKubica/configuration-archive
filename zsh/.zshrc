@@ -51,6 +51,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias nf='clear; neofetch'
+alias start='~/.config/sway/autospawn.sh'
 alias 2048='java -jar ~/Projects/Clean2048.jar'
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
@@ -83,3 +84,6 @@ export PATH="$(pyenv root)/shims:$PATH"
 # Configures lua lsp.
 alias luamake=/home/szymon/.config/lsp/lua-language-server/3rd/luamake/luamake
 export PATH="${HOME}/.config/lsp/lua-language-server/bin:${PATH}"
+
+# Created by `pipx` on 2023-01-16 11:12:46
+export PATH="$PATH:/home/szymon/.local/bin"
