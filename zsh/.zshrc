@@ -76,12 +76,12 @@ yr() { yay -Rns $(yay -Qe | fzf -m | awk '{print $1}'); }
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # Uses the fancy prompt only in terminals with unicode support.
 # Disabled in tty
-if [ "$TERM" = "alacritty" ]; then
-  [[ ! -f ~/.config/p10k.zsh ]] || source ~/.config/p10k.zsh
-  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-else
+if [ "$TERM" = "linux" ]; then
   PROMPT="%n@%m: %(4~|%-1~/.../%2~|%3~) <> "
   RPROMPT="%*"
+else
+  [[ ! -f ~/.config/p10k.zsh ]] || source ~/.config/p10k.zsh
+  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 fi
 
 eval "$(pyenv init -)"
