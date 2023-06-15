@@ -1,0 +1,8 @@
+imap ii <Esc>
+set relativenumber
+set nu
+set ignorecase
+set smartcase
+
+nnoremap <Space> :action LeaderAction<cr>
+vnoremap <Space> :action LeaderAction<cr>
